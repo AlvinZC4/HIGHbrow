@@ -18,7 +18,10 @@ app.use(routes)
 // Connect to database
 mongoose.connect(process.env.MONGOD_URI || "mongoddb://localhost/users", {
     useNewUrlParser: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+
 })
 
 // Listen on port
