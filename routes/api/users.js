@@ -2,7 +2,7 @@ const router = require("express").Router()
 const usersController = require("../../controllers/usersController")
 
 
-router.route("/")
+router.route("/username")
     .get(usersController.findUsername)
 
 router.route("/mywishlist")
