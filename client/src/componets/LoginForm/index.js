@@ -9,16 +9,18 @@ function LoginForm(props) {
                 type="text"
                 name="username"
                 value={props.username}
+                onChange={props.handleInputChange}
                 className="form-control"
                 placeholder="Enter Username"
             />
           </div>
           <div className="form-group">
-            <label for="password">password</label>
+            <label for="password">Password</label>
             <input
                 type="text"
                 name="password"
                 value={props.password}
+                onChange={props.handleInputChange}
                 className="form-control"
                 placeholder="Enter Password"
             />
