@@ -21,7 +21,7 @@ app.use(function(req, res) {
   });
 
 // Connect to database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/users", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userlist", {
     useNewUrlParser: true,
     useFindAndModify: false,
     useCreateIndex: true,
