@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import LoginForm from './componets/LoginForm';
 import Login from "./pages/Login";
 import API from "./utils/API"
 
@@ -58,7 +57,7 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/">
-            <LoginForm 
+            <Login
               loginForm={loginForm}
               onChange={handleInputChange} 
               onClick={handleLoginSubmit}
