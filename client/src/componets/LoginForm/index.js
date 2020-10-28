@@ -7,7 +7,7 @@ function LoginForm(props) {
             <label for="username">Username</label>
             <input
                 type="text"
-                name="username"
+                name={props.name}
                 value={props.username}
                 onChange={props.handleInputChange}
                 className="form-control"
@@ -18,7 +18,7 @@ function LoginForm(props) {
             <label for="password">Password</label>
             <input
                 type="text"
-                name="password"
+                name={props.name}
                 value={props.password}
                 onChange={props.handleInputChange}
                 className="form-control"
@@ -26,7 +26,7 @@ function LoginForm(props) {
             />
           </div>
           <div>
-              <button onClick={props.handleLoginSubmit} className="btn btn-primary"></button>
+              <button onClick={props.handleLoginSubmit} className="btn btn-primary">Submit</button>
           </div>
       </form>
     )
