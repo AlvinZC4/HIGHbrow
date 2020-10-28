@@ -1,16 +1,14 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import LoginForm from "../componets/LoginForm"
-import API from "../utils/API"
 
 function Login(props) {
 
     return (
         <div>
             <LoginForm
-                name={props.name}
-                value={props.value}
-                onChange={props.handleInputChange} 
-                onClick={props.handleLoginSubmit}
+                loginForm={props.loginForm}
+                onChange={props.onChange} 
+                onClick={props.onClick}
             />
         </div>
     )

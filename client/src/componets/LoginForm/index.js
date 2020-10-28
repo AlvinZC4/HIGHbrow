@@ -1,32 +1,33 @@
 import React from "react"
 
 function LoginForm(props) {
+  console.log("props", props)
     return(
       <form className="login">
           <div className="form-group">
-            <label for="username">Username</label>
+            <label htmlFor="username">Username</label>
             <input
                 type="text"
-                name={props.name}
-                value={props.username}
-                onChange={props.handleInputChange}
+                name="username"
+                value={props.loginForm.username}
+                onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Username"
             />
           </div>
           <div className="form-group">
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
                 type="text"
-                name={props.name}
-                value={props.password}
-                onChange={props.handleInputChange}
+                name="password"
+                value={props.loginForm.password}
+                onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Password"
             />
           </div>
           <div>
-              <button onClick={props.handleLoginSubmit} className="btn btn-primary">Submit</button>
+              <button onClick={props.onClick} className="btn btn-primary">Submit</button>
           </div>
       </form>
     )

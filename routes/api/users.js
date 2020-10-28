@@ -3,9 +3,9 @@ const usersController = require("../../controllers/usersController")
 
 
 router.route("/username")
-    .get(usersController.findUsername)
+    .post(usersController.findUsername)
 
 router.route("/mywishlist")
-    .get(usersController.findAll)
+    .get(usersController.findAllUserBooks)
 
     module.exports = router

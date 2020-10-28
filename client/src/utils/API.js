@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export default {
-    getUsername: function() {
-        return axios.get("/api/username")
+    getUsername: function(user) {
+        return axios.post("/api/username", user)
     }
 }

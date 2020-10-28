@@ -9,9 +9,12 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     findUsername: function(req, res) {
+        console.log("findUser End Point")
+        console.log("req.body", req.body)
         db.User
-            .findOne({username: req.body}, "username password")
-            .then(dbModel => res.json(dbModel))
+            .findOne({username: req.body.username}, "username password userBooks following")
+            .then(dbModel => {res.json(dbModel)
+            console.log("controller endpoint", dbModel)})
             .catch(err => res.status(422).json(err))
     }
 }
