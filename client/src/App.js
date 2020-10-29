@@ -37,10 +37,7 @@ function App() {
             console.log(res)
 
               if (!res.data.username) {
-                  console.log("Does not match any username")
-              }
-              else if (res.data.password !== loginForm.password) {
-                  console.log("password incorrect")
+                  console.log("Username or Password does is incorrect")
               }
               else {
                   console.log("Setting username in checkUserCreds")
