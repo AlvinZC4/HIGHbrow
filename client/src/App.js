@@ -1,25 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Login from "./pages/Login";
+import API from "./utils/API"
 
 function App() {
+
+  const [user, setUser] = useState("")
+  const [loginForm, setLoginForm] = useState({
+    username: "",
+    password: ""
+  })
+
+  useEffect( () => {
+    console.log("user state", user)
+  }, [user])
+
+  function handleInputChange(e) {
+      const {name, value} = e.target
+      setLoginForm({...loginForm, [name]: value})
+  }
+
+  function handleLoginSubmit(e) {
+      e.preventDefault()
+      if (loginForm.username && loginForm.password) {
+          checkUserCreds()
+      }
+      else {
+        console.log("enter username and password")
+      }
+  }
+
+  function checkUserCreds() {
+      API.getUsername(loginForm)
+          .then(res => {
+            console.log("Running checkUserCreds")
+            console.log(res)
+
+              if (!res.data.username) {
+                  console.log("Username or Password does is incorrect")
+              }
+              else {
+                  console.log("Setting username in checkUserCreds")
+                  setUser(res.data.username)
+                  
+              }
+          }
+              )
+          .catch(err => console.log(err))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/">
+            <Login
+              loginForm={loginForm}
+              onChange={handleInputChange} 
+              onClick={handleLoginSubmit}
+            />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

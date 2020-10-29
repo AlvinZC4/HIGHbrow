@@ -1,6 +1,6 @@
 const express = require("express")
 const mongoose = require("mongoose")
-// const routes = require("./routes")
+const routes = require("./routes")
 const app = express()
 const PORT = process.env.PORT || 3001
 const path = require("path")
@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Routes
-// app.use(routes)
+app.use(routes)
 
 app.use(function(req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
