@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Login from "./pages/Login";
+import Wishlist from "./pages/Wishlist"
 import API from "./utils/API"
 
 function App() {
@@ -58,6 +59,11 @@ function App() {
               loginForm={loginForm}
               onChange={handleInputChange} 
               onClick={handleLoginSubmit}
+            />
+          </Route>
+          <Route exact path="/wishlist">
+            <Wishlist
+              user={user}
             />
           </Route>
         </Switch>
