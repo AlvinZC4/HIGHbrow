@@ -2,10 +2,15 @@ const db = require("../models")
 
 module.exports = {
     findAllUserBooks: function(req, res) {
+        console.log("findAllUserBooks End Point")
+        console.log("UserBooks req.body", req.body)
         db.User
             .find({username: req.body}, "userBooks")
             .sort({title: 1})
-            .then(dbModel => res.json(dbModel))
+            .then(dbModel => {
+                console.log("UserBooks Response", dbModel)
+                res.json(dbModel)
+            })
             .catch(err => res.status(422).json(err))
     },
     findUsername: function(req, res) {
