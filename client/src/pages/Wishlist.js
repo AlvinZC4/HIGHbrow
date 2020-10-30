@@ -11,6 +11,14 @@ function Wishlist(props) {
         wishlist: false,
         shared: false
     })
+
+    function loadUserBooks() {
+        API.getUserBooks(props.user)
+            .then(res => 
+                setMyBooks(res.data)
+            )
+            .catch(err => console.log(err))
+    }
 }
 
 export default Wishlist
