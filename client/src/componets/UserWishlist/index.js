@@ -1,6 +1,6 @@
 import React from "react"
 
-function UserWishlist(props) {
+function UserWishlist({children}) {
     return (
         <div className="list-overflow-container">
       <ul className="list-group">{children}</ul>
