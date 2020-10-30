@@ -12,6 +12,10 @@ function Wishlist(props) {
         shared: false
     })
 
+    useEffect(() => {
+        loadUserBooks()
+    }, [])
+
     function loadUserBooks() {
         API.getUserBooks(props.user)
             .then(res => 
