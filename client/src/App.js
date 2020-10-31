@@ -65,9 +65,7 @@ function App() {
             />
           </Route>
           <Route exact path="/wishlist">
-            <Wishlist
-              user={user}
-            />
+            <Wishlist user={user}/>
           </Route>
         </Switch>
       </div>
