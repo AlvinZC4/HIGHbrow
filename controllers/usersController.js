@@ -15,7 +15,7 @@ module.exports = {
     },
     findUsername: function(req, res) {
         console.log("findUser End Point")
-        console.log("req.body", req.body)
+        console.log("findUserName req.body", req.body)
         db.User
             .findOne({username: req.body.username}, "username password userBooks following")
             .then(dbModel => {
@@ -37,6 +37,17 @@ module.exports = {
                 }
             console.log("controller endpoint", dbModel)
         })
+            .catch(err => res.status(422).json(err))
+    },
+    createUser: function(req, res) {
+        console.log("createUser End Point")
+        console.log("createUser req.body", req.body)
+        db.User
+            .create(req.body)
+            .then(dbModel =>{
+                res.json(dbModel)
+                console.log("createUser res", dbModel)
+            })
             .catch(err => res.status(422).json(err))
     }
 }
