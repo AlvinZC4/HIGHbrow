@@ -1,6 +1,16 @@
 import React from "react"
+import {useHistory} from "react-router-dom"
 
 function LoginForm(props) {
+
+  const history = useHistory()
+
+    function redirect(event) {
+      event.preventDefault()
+      history.push("/wishlist")
+    }
+
+
   console.log("props", props)
     return(
       <form className="login">
@@ -28,6 +38,7 @@ function LoginForm(props) {
           </div>
           <div>
               <button onClick={props.onClick} className="btn btn-primary">Submit</button>
+              <button onClick={redirect} className="btn btn-primary">Submit</button>
           </div>
       </form>
     )
