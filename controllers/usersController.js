@@ -5,7 +5,7 @@ module.exports = {
         console.log("findAllUserBooks End Point")
         console.log("UserBooks req.body", req.body)
         db.User
-            .find({username: req.body}, "userBooks")
+            .findOne({username: req.body.username}, "userBooks")
             .sort({title: 1})
             .then(dbModel => {
                 console.log("UserBooks Response", dbModel)

@@ -5,6 +5,6 @@ export default {
         return axios.post("/api/users/username", user)
     },
     getUserBooks: function(user) {
-        return axios.get("/api/users/mywishlist", user)
+        return axios.post("/api/users/mywishlist", user)
     }
 }

@@ -13,10 +13,13 @@ function Wishlist(props) {
 
     function loadUserBooks() {
         console.log(`${props.user}'s books loading`)
-        API.getUserBooks(props.user)
+        const query = {
+            username: props.user
+        }
+        API.getUserBooks(query)
             .then(res => {
                 console.log("load books API response", res)
-                setMyBooks(res.data)
+                setMyBooks(res.data.userBooks)
             })
             .catch(err => console.log(err))
     }
@@ -27,13 +30,15 @@ function Wishlist(props) {
                 <Col size="md-8">
                     {myBooks.length ? (
                         <UserWishlist>
-                            {myBooks.map(book => (
+                            {myBooks.map(book => {
+                                console.log("book", book)
+                               return (
                                 <WishlistItem key={book.id}>
                                     <strong>
                                         {book.Title} by {book.author}
                                     </strong>
                                 </WishlistItem>
-                            ))}
+                            )})}
                         </UserWishlist>
                     ) : (
                         <h3>You have no books saved</h3>

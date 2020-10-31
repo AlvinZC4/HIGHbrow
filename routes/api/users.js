@@ -6,6 +6,6 @@ router.route("/username")
     .post(usersController.findUsername)
 
 router.route("/mywishlist")
-    .get(usersController.findAllUserBooks)
+    .post(usersController.findAllUserBooks)
 
 module.exports = router
