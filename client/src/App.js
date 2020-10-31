@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
 import Login from "./pages/Login";
+import Wishlist from "./pages/Wishlist"
 import API from "./utils/API"
 
 function App() {
+
+  const history = useHistory()
 
   const [user, setUser] = useState("")
   const [loginForm, setLoginForm] = useState({
@@ -30,6 +33,7 @@ function App() {
       }
   }
 
+
   function checkUserCreds() {
       API.getUsername(loginForm)
           .then(res => {
@@ -42,7 +46,7 @@ function App() {
               else {
                   console.log("Setting username in checkUserCreds")
                   setUser(res.data.username)
-                  
+                  history.push("/wishlist")
               }
           }
               )
@@ -58,6 +62,11 @@ function App() {
               loginForm={loginForm}
               onChange={handleInputChange} 
               onClick={handleLoginSubmit}
+            />
+          </Route>
+          <Route exact path="/wishlist">
+            <Wishlist
+              user={user}
             />
           </Route>
         </Switch>
