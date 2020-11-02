@@ -72,7 +72,7 @@ function CreateUserForm(props) {
           <div className="form-group">
             <label htmlFor="new-password">Create Password</label>
             <input
-                type="text"
+                type="password"
                 name="new-password"
                 value={props.loginForm.password}
                 onChange={props.onChange}
@@ -85,7 +85,7 @@ function CreateUserForm(props) {
           <div className="form-group">
             <label htmlFor="confirm-password">Confirm Password</label>
             <input
-                type="text"
+                type="password"
                 name="confirm-password"
                 value={props.loginForm.password}
                 onChange={props.onChange}
