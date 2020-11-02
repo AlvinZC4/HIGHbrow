@@ -3,12 +3,12 @@ import {useHistory} from "react-router-dom"
 
 function CreateUserForm(props) {
 
-    const history = useHistory()
+    // const history = useHistory()
 
-    function redirect(event) {
-      event.preventDefault()
-      history.push("/wishlist")
-    }
+    // function redirect(event) {
+    //   event.preventDefault()
+    //   history.push("/wishlist")
+    // }
 
 
   console.log("props", props)
@@ -18,8 +18,8 @@ function CreateUserForm(props) {
             <label htmlFor="new-username">Create New Username</label>
             <input
                 type="text"
-                name="new-username"
-                value={props.loginForm.NewUsername}
+                name="username"
+                value={props.newUserForm.username}
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter New Username"
@@ -29,8 +29,8 @@ function CreateUserForm(props) {
             <label htmlFor="first-name">First Name</label>
             <input
                 type="text"
-                name="first-name"
-                value={props.loginForm.NewUsername}
+                name="firstName"
+                value={props.newUserForm.firstName}
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Your First Name"
@@ -40,8 +40,8 @@ function CreateUserForm(props) {
             <label htmlFor="last-name">Last Name</label>
             <input
                 type="text"
-                name="last-name"
-                value={props.loginForm.NewUsername}
+                name="lastName"
+                value={props.newUserForm.lastName}
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Your Last Name"
@@ -51,8 +51,8 @@ function CreateUserForm(props) {
             <label htmlFor="phone">Enter Your Phone Number</label>
             <input
                 type="text"
-                name="phonw"
-                value={props.loginForm.NewUsername}
+                name="phone"
+                value={props.newUserForm.phone}
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Your Phone Number Here"
@@ -63,7 +63,7 @@ function CreateUserForm(props) {
             <input
                 type="text"
                 name="email"
-                value={props.loginForm.NewUsername}
+                value={props.newUserForm.email}
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Your E-mail Address"
@@ -73,8 +73,8 @@ function CreateUserForm(props) {
             <label htmlFor="new-password">Create Password</label>
             <input
                 type="password"
-                name="new-password"
-                value={props.loginForm.password}
+                name="password"
+                value={props.newUserForm.password}
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Your Password Here"
@@ -86,8 +86,8 @@ function CreateUserForm(props) {
             <label htmlFor="confirm-password">Confirm Password</label>
             <input
                 type="password"
-                name="confirm-password"
-                value={props.loginForm.password}
+                name="passwordConfirm"
+                value={props.newUserForm.passwordConfirm}
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Re-type Your Password"

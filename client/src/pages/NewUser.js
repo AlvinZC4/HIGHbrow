@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import {Container, Row, Col} from "../componets/Grid"
 import CreateUserForm from "../componets/CreateUserForm"
+import {Link} from "react-router-dom"
 import API from "../utils/API"
 
 function NewUser() {
@@ -21,9 +22,12 @@ function NewUser() {
     }
 
     function handleNewUserSubmit(e) {
+        e.preventDefault()
         if (newUserform.username && newUserform.firstName && newUserform.lastName && newUserform.phone && newUserform.email && newUserform.password && newUserform.passwordConfirm) {
-            if (newUserform.password !== newUserform.passwordConirm) {
+            if (newUserform.password !== newUserform.passwordConfirm) {
                 console.log("Password entries do not match")
+                console.log("password", newUserform.password)
+                console.log("confirm password", newUserform.passwordConfirm)
                 return
             }
             else {
@@ -54,9 +58,16 @@ function NewUser() {
                 <Col size="12">
                     <CreateUserForm
                         newUserForm={newUserform}
-                        handleInputChange={handleInputChange}
-                        handleNewUserSubmit={handleNewUserSubmit}
+                        onChange={handleInputChange}
+                        onClick={handleNewUserSubmit}
                     />
+                </Col>
+            </Row>
+            <Row>
+                <Col size="12">
+                    <Link to="/">
+                        Back to Login
+                    </Link>
                 </Col>
             </Row>
         </Container>
