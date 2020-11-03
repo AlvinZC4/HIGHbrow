@@ -69,15 +69,12 @@ function App() {
           <Route exact path="/wishlist">
             <Wishlist user={user}/>
           </Route>
-<<<<<<< HEAD
           <Route exact path="/getbooks">
             <FindBooks
 
             />
           </Route>
-=======
           <Route exact path="/newuser" component={NewUser}/>
->>>>>>> master
         </Switch>
       </div>
     </Router>
