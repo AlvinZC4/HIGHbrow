@@ -1,10 +1,11 @@
 import axios from "axios"
 
 export default {
-    getUsername: function(user) {
-        return axios.post("/api/users/username", user)
+    findBooks: function (search) {
+        return axios.get("/api/books/getBooks/" + search)
     },
-    getUserBooks: function(user) {
-        return axios.post("/api/users/mywishlist", user)
+    getUsername: function (user) {
+        return axios.post("/api/users/username", user)
     }
+
 }

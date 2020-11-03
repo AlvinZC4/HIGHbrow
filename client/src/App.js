@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import { BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
 import Login from "./pages/Login";
 import Wishlist from "./pages/Wishlist"
+import FindBooks from "./pages/FindBooks"
 import API from "./utils/API"
 
 function App() {
@@ -14,43 +15,43 @@ function App() {
     password: ""
   })
 
-  useEffect( () => {
+  useEffect(() => {
     console.log("user state", user)
   }, [user])
 
   function handleInputChange(e) {
-      const {name, value} = e.target
-      setLoginForm({...loginForm, [name]: value})
+    const { name, value } = e.target
+    setLoginForm({ ...loginForm, [name]: value })
   }
 
   function handleLoginSubmit(e) {
-      e.preventDefault()
-      if (loginForm.username && loginForm.password) {
-          checkUserCreds()
-      }
-      else {
-        console.log("enter username and password")
-      }
+    e.preventDefault()
+    if (loginForm.username && loginForm.password) {
+      checkUserCreds()
+    }
+    else {
+      console.log("enter username and password")
+    }
   }
 
 
   function checkUserCreds() {
-      API.getUsername(loginForm)
-          .then(res => {
-            console.log("Running checkUserCreds")
-            console.log(res)
+    API.getUsername(loginForm)
+      .then(res => {
+        console.log("Running checkUserCreds")
+        console.log(res)
 
-              if (!res.data.username) {
-                  console.log("Username or Password does is incorrect")
-              }
-              else {
-                  console.log("Setting username in checkUserCreds")
-                  setUser(res.data.username)
-                  history.push("/wishlist")
-              }
-          }
-              )
-          .catch(err => console.log(err))
+        if (!res.data.username) {
+          console.log("Username or Password does is incorrect")
+        }
+        else {
+          console.log("Setting username in checkUserCreds")
+          setUser(res.data.username)
+          history.push("/wishlist")
+        }
+      }
+      )
+      .catch(err => console.log(err))
   }
 
   return (
@@ -60,13 +61,18 @@ function App() {
           <Route exact path="/">
             <Login
               loginForm={loginForm}
-              onChange={handleInputChange} 
+              onChange={handleInputChange}
               onClick={handleLoginSubmit}
             />
           </Route>
           <Route exact path="/wishlist">
             <Wishlist
               user={user}
+            />
+          </Route>
+          <Route exact path="/getbooks">
+            <FindBooks
+
             />
           </Route>
         </Switch>
