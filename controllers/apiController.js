@@ -24,7 +24,8 @@ module.exports = {
                           {
                             id: index.best_book[0].id[0]._,
                             title: index.best_book[0].title[0],
-                            author: index.best_book[0].author[0].name[0]
+                            author: index.best_book[0].author[0].name[0],
+                            image: index.best_book[0].small_image_url[0]
                           }  
                         )
                     })
