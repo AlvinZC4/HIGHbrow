@@ -1,4 +1,5 @@
 const db = require("../models")
+// const passwordHandS = require("password-hash-and-salt")
 
 module.exports = {
     findAllUserBooks: function(req, res) {
@@ -44,10 +45,13 @@ module.exports = {
         console.log("createUser req.body", req.body)
         db.User
             .create(req.body)
-            .then(dbModel =>{
+            .then(dbModel => {
                 res.json(dbModel)
                 console.log("createUser res", dbModel)
             })
-            .catch(err => res.status(422).json(err))
+            .catch(err => {
+                res.status(422).json(err)
+                console.log(err)
+            })
     }
 }
