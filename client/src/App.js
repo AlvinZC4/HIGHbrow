@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
 import Login from "./pages/Login";
+import NewUser from './pages/NewUser';
 import Wishlist from "./pages/Wishlist"
 import FindBooks from "./pages/FindBooks"
 import API from "./utils/API"
@@ -66,15 +67,17 @@ function App() {
             />
           </Route>
           <Route exact path="/wishlist">
-            <Wishlist
-              user={user}
-            />
+            <Wishlist user={user}/>
           </Route>
+<<<<<<< HEAD
           <Route exact path="/getbooks">
             <FindBooks
 
             />
           </Route>
+=======
+          <Route exact path="/newuser" component={NewUser}/>
+>>>>>>> master
         </Switch>
       </div>
     </Router>
