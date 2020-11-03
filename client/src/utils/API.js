@@ -6,5 +6,8 @@ export default {
     },
     getUserBooks: function(user) {
         return axios.post("/api/users/mywishlist", user)
+    },
+    createUser: function(user) {
+        return axios.post("api/users/createuser", user)
     }
-}
+ }

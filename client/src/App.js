@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
 import Login from "./pages/Login";
+import NewUser from './pages/NewUser';
 import Wishlist from "./pages/Wishlist"
 import API from "./utils/API"
 
@@ -65,10 +66,9 @@ function App() {
             />
           </Route>
           <Route exact path="/wishlist">
-            <Wishlist
-              user={user}
-            />
+            <Wishlist user={user}/>
           </Route>
+          <Route exact path="/newuser" component={NewUser}/>
         </Switch>
       </div>
     </Router>
