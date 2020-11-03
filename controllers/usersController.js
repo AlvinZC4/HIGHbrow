@@ -21,24 +21,31 @@ module.exports = {
         db.User
             .findOne({username: req.body.username}, "username password userBooks following")
             .then(dbModel => {
-                // Check if password passed from front-end matches the password stored in the database"
-                // If the passwords do not match return "Password Incorrect"
-                if (dbModel.password !== req.body.password) {
-                    res.json("Password Incorrect")
-                    console.log("password incorrect")
-                }
-                // If passwords match store username, userBooks, and following in userReturn variable. This is to prevent sending the password back to the front-end.
-                else {
-                    const userReturn = {
-                        username: dbModel.username,
-                        userBooks: dbModel.userBooks,
-                        following: dbModel.following
+
+                // Use bcrypt hashes password entered by the user and checks it against the password stored in the database
+                bcrypt.compare(req.body.password, dbModel.password, function(err, result){
+
+                    // if the hashed user entered password does not match the password in the database then return that the user entered an incorrect password
+                    if (result == false) {
+                        res.json("Password Incorrect")
+                        console.log("passowrd incorrect")
                     }
-                    res.json(userReturn)
-                    console.log("userReturn", userReturn)
-                }
-            console.log("controller endpoint", dbModel)
-        })
+                    // If the hashed passwords do match then a new object is created to send back to the front-end. The new object does not contain the hashed password.
+                    else if (result == true) {
+                        const userReturn = {
+                            username: dbModel.username,
+                            userBooks: dbModel.userBooks,
+                            following: dbModel.following
+                        }
+                        res.json(userReturn)
+                        console.log("userReturn", userReturn)
+                        console.log("controller endpoint", dbModel)
+                    }
+                    else {
+                        throw err
+                    }
+                })
+            })
             .catch(err => res.status(422).json(err))
     },
     createUser: function(req, res) {
@@ -47,7 +54,6 @@ module.exports = {
 
         // Salt and hash password sent from front-end
         const plainTextPassword = req.body.password
-        let hashedPassword
 
         console.log("plainTextPassword", plainTextPassword)
 
@@ -69,7 +75,7 @@ module.exports = {
                         // create new object with salted and hashed password to post into database
                         const newUser = {
                             username: req.body.username,
-                            password: hashedPassword,
+                            password: hash,
                             firstName: req.body.firstName,
                             lastName: req.body.lastName,
                             phone: req.body.phone,
@@ -87,9 +93,9 @@ module.exports = {
                                 res.status(422).json(err)
                                 console.log(err)
                             })
-                                    }
-                                })
-                            }
-                        })
+                    }
+                })
+            }
+        })
     }
 }
