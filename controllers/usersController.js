@@ -1,5 +1,6 @@
 const db = require("../models")
-// const passwordHandS = require("password-hash-and-salt")
+const bcrypt = require("bcrypt")
+const saltRounds = 10
 
 module.exports = {
     findAllUserBooks: function(req, res) {
@@ -43,15 +44,52 @@ module.exports = {
     createUser: function(req, res) {
         console.log("createUser End Point")
         console.log("createUser req.body", req.body)
-        db.User
-            .create(req.body)
-            .then(dbModel => {
-                res.json(dbModel)
-                console.log("createUser res", dbModel)
-            })
-            .catch(err => {
-                res.status(422).json(err)
-                console.log(err)
-            })
+
+        // Salt and hash password sent from front-end
+        const plainTextPassword = req.body.password
+        let hashedPassword
+
+        console.log("plainTextPassword", plainTextPassword)
+
+        bcrypt.genSalt(saltRounds, function(err, salt){
+            if (err) {
+                console.log("genSalt Error")
+                throw err
+            }
+            else {
+                console.log("genSalt Ran")
+                bcrypt.hash(plainTextPassword, salt, function(err, hash){
+                    if (err) {
+                        console.log("hash error")
+                        throw err
+                    }
+                    else {
+                        console.log("hash ran, result:", hash)
+
+                        // create new object with salted and hashed password to post into database
+                        const newUser = {
+                            username: req.body.username,
+                            password: hashedPassword,
+                            firstName: req.body.firstName,
+                            lastName: req.body.lastName,
+                            phone: req.body.phone,
+                            email: req.body.email
+                        }
+                        console.log("newUser", newUser)
+
+                        db.User
+                            .create(newUser)
+                            .then(dbModel => {
+                                res.json(dbModel)
+                                console.log("createUser res", dbModel)
+                            })
+                            .catch(err => {
+                                res.status(422).json(err)
+                                console.log(err)
+                            })
+                                    }
+                                })
+                            }
+                        })
     }
 }
