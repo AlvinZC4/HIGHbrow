@@ -6,7 +6,7 @@ function Navbar() {
 			<section id="title">
 				<div className="container-fluid">
 					<nav className="navbar bg-info navbar-expand-lg navbar-dark fixed-top">
-						<a className="navbar-brand" href="">
+						<a className="navbar-brand" href="home">
 							HIGHbrow
 						</a>
 						<button
@@ -26,22 +26,27 @@ function Navbar() {
 						>
 							<ul className="navbar-nav ml-auto">
 								<li className="nav-item">
-									<a className="nav-link" href="">
+									<a className="nav-link" href="home">
 										Home
 									</a>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="">
+									<a className="nav-link" href="signup">
 										Create Registry
 									</a>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="">
+									<a className="nav-link" href="Wishlist">
+										Create Wishlist
+									</a>
+								</li>
+								<li className="nav-item">
+									<a className="nav-link" href="findReader">
 										Find Readers
 									</a>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="">
+									<a className="nav-link" href="SignInButton">
 										Sign In
 									</a>
 								</li>

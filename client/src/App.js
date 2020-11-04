@@ -14,6 +14,7 @@ import Footer from './componets/Footer';
 import SigninButton from './componets/SigninButton';
 import FindReader from './pages/findReader';
 import Home from "./pages/home";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
 	const history = useHistory();

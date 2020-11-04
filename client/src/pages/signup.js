@@ -161,6 +161,16 @@ function Signup() {
 							>
 								Create Account
 							</button>
+						
+						</div>
+						<div className="form-group">
+							<button
+								type="button"
+								className="btn btn-info btn-lg btn-block login-button"
+							>
+								Click Here to Create Wishlist
+							</button>
+						
 						</div>
 					</form>
 				</div>
