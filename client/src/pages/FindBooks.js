@@ -1,5 +1,10 @@
-import React, { setState, useState } from "react"
+import React, { useState, useEffect } from "react"
 import SearchForm from "../componets/SearchForm/SearchForm";
+import {Container, Row, Col} from "../componets/Grid"
+import Jumbotron from "../componets/Jumbotron"
+import {List, ListItem} from "../componets/List"
+import BookImage from "../componets/BookImage"
+import AddBookButton from "../componets/AddBookButton"
 import API from "../utils/API";
 
 function FindBooks(props) {
@@ -11,6 +16,11 @@ function FindBooks(props) {
 
     const [searchResults, setSearchResults] = useState([]);
 
+    useEffect(() =>{
+        console.log("searchResults", searchResults)
+    }, [searchResults])
+
+
     const searchBooks = () => {
         console.log(search.search);
         API.findBooks(search.search)
@@ -18,10 +28,7 @@ function FindBooks(props) {
                 console.log("api search result", res.data);
                 //if res.data
                 setSearchResults(res.data)
-            });      //this.setState({ results: res.data.data })) // Is this correct, api results returned here???
-        //.catch(err => console.log(err));
-        // console.log(state.results);
-        // searchResults =
+            });
     };
 
     //search input field?
@@ -36,26 +43,51 @@ function FindBooks(props) {
     // When the form is submitted, search the  API for `this.state.search`
     function handleFormSubmit(event) {
         event.preventDefault();
-        searchBooks(); //api method???
+        searchBooks();
     };
+
+    function addBook(id) {
+        console.log(id)
+    }
 
     /////layout here - component
     return (
         <div>
-            < SearchForm
-                handleInputChange={handleInputChange}
-                handleFormSubmit={handleFormSubmit}
-                value={search.search}
-
-            />
-
-            {/* < ResultList
-                handleInputChange={handleInputChange}
-                handleFormSubmit={handleFormSubmit}
-            /> */}
-
-
-
+            <Container>
+                <Row>
+                    <Col size="12 lg-8 md-6">
+                        < SearchForm
+                            handleInputChange={handleInputChange}
+                            handleFormSubmit={handleFormSubmit}
+                            value={search.search}
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size="12 lg-8 md-6">
+                        <h2>Search Results</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size="12 lg-8 md-6">
+                        {searchResults.length ? (
+                            <List>
+                                {searchResults.map(book => (
+                                    <ListItem key={book.id}>
+                                        <BookImage bookimage={book.image}/>
+                                        <h4>
+                                            {book.title} by {book.author}
+                                        </h4>
+                                        <AddBookButton onClick={addBook(book.id)}/>
+                                    </ListItem>
+                                ))}
+                            </List>
+                        ) : (
+                            <h3>No Results to Display</h3>
+                        )}
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
 
