@@ -10,5 +10,7 @@ router.route("/mywishlist")
     
 router.route("/createuser")
     .post(usersController.createUser)
+router.route("/:username")
+    .put(usersController.addBook)
 
 module.exports = router
