@@ -15,8 +15,8 @@ const UserSchema = new Schema ({
             title: {type: String, required: true},
             author: {type: String, required: true},
             image: {type: String},
-            wishlist: {type: Boolean},
-            shared: {type: Boolean},
+            wishlist: {type: Boolean, default: true},
+            shared: {type: Boolean, default: false},
         }
     ],
     following: [

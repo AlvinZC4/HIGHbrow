@@ -97,5 +97,25 @@ module.exports = {
                 })
             }
         })
+    },
+    addBook: function(req, res) {
+        console.log("addBook endpoint hit, req: ", req)
+        const newBook = {
+            id: req.body.id,
+            title: req.body.title,
+            author: req.body.author,
+            image: req.body.image
+        }
+        console.log(`User ${req.params.username} adding new book`, newBook)
+        db.User
+            .findOneAndUpdate({username: req.params.username}, {$push: {userBooks: newBook}})
+            .then(dbModel => {
+                res.json(dbModel)
+                console.log("addBook response", dbModel)
+            })
+            .catch(err => {
+                res.status(422).json(err)
+                console.log("getbook res error", err)
+            })
     }
 }
