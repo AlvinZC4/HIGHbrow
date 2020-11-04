@@ -71,7 +71,7 @@ function App() {
           </Route>
           <Route exact path="/getbooks">
             <FindBooks
-
+              user={user}
             />
           </Route>
           <Route exact path="/newuser" component={NewUser}/>

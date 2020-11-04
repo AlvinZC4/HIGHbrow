@@ -22,13 +22,20 @@ function FindBooks(props) {
 
 
     const searchBooks = () => {
-        console.log(search.search);
-        API.findBooks(search.search)
-            .then(res => {
-                console.log("api search result", res.data);
-                //if res.data
-                setSearchResults(res.data)
-            });
+
+        if (props.user == "") {
+            return
+        }
+        else {
+            console.log(search.search);
+            API.findBooks(search.search)
+                .then(res => {
+                    console.log("api search result", res.data);
+                    //if res.data
+                    setSearchResults(res.data)
+                });
+    
+        }
     };
 
     //search input field?
@@ -63,30 +70,41 @@ function FindBooks(props) {
                         />
                     </Col>
                 </Row>
-                <Row>
-                    <Col size="12 lg-8 md-6">
-                        <h2>Search Results</h2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col size="12 lg-8 md-6">
-                        {searchResults.length ? (
-                            <List>
-                                {searchResults.map(book => (
-                                    <ListItem key={book.id}>
-                                        <BookImage bookimage={book.image}/>
-                                        <h4>
-                                            {book.title} by {book.author}
-                                        </h4>
-                                        <AddBookButton onClick={addBook(book.id)}/>
-                                    </ListItem>
-                                ))}
-                            </List>
-                        ) : (
-                            <h3>No Results to Display</h3>
-                        )}
-                    </Col>
-                </Row>
+                
+                    {props.user == "" ? (
+                        <Row>
+                            <Col size="12 lg-8 md-6">
+                                <h3>Please Login to Search Books</h3>
+                            </Col>
+                        </Row>
+                    ) : (
+                        <div>
+                            <Row>
+                                <Col size="12 lg-8 md-6">
+                                    <h2>Search Results</h2>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col size="12 lg-8 md-6">
+                                    {searchResults.length ? (
+                                        <List>
+                                            {searchResults.map(book => (
+                                                <ListItem key={book.id}>
+                                                    <BookImage bookimage={book.image}/>
+                                                    <h4>
+                                                        {book.title} by {book.author}
+                                                    </h4>
+                                                    <AddBookButton onClick={addBook(book.id)}/>
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    ) : (
+                                        <h3>No Results to Display</h3>
+                                    )}
+                                </Col>
+                            </Row>
+                        </div>
+                    )}
             </Container>
         </div>
     )
