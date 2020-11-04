@@ -16,9 +16,9 @@ function Wishlist(props) {
         const query = {
             username: props.user
         }
-        API.findBooks(query)
+        API.getUserBooks(query)
             .then(res => {
-                console.log("load books API response", res)
+                console.log("load books API response", res.data)
                 setMyBooks(res.data.userBooks)
             })
             .catch(err => console.log(err))
@@ -35,7 +35,7 @@ function Wishlist(props) {
                                 return (
                                     <WishlistItem key={book.id}>
                                         <strong>
-                                            {book.Title} by {book.author}
+                                            {book.title} by {book.author}
                                         </strong>
                                     </WishlistItem>
                                 )

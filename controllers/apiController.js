@@ -12,7 +12,7 @@ module.exports = {
         console.log(BASEURL + req.params.search + "&key=" + APIKEY);
         axios.get(BASEURL + req.params.search + "&key=" + APIKEY)
             .then(result => {
-                console.log("API Results", result)
+                // console.log("API Results", result)
                 parseString(result.data, function (err, result) {
                     //get only data you need array
                     // The results we want are buried deep witin the API response, set resultArray to an array that gets to the resutls we are after

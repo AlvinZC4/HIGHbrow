@@ -15,8 +15,9 @@ function FindBooks(props) {
     });
 
     const [searchResults, setSearchResults] = useState([]);
+    let bookSearchResults = []
 
-    useEffect(() =>{
+    useEffect(() => {
         console.log("searchResults", searchResults)
     }, [searchResults])
 
@@ -32,7 +33,9 @@ function FindBooks(props) {
                 .then(res => {
                     console.log("api search result", res.data);
                     //if res.data
+                    bookSearchResults = res.data
                     setSearchResults(res.data)
+                    console.log("bookSearchResults", bookSearchResults)
                 });
     
         }
@@ -54,8 +57,18 @@ function FindBooks(props) {
     };
 
     function addBook(id) {
-        console.log(id)
+        console.log("addBook function hit")
+        console.log("bookSearch Results in addBook", bookSearchResults)
+        const bookToAdd = searchResults.find(book => book.id === id)
+        console.log("booktoAdd", bookToAdd)
+
+        API.addBook(props.user, bookToAdd)
+        .then(res => console.log("Book added to wishlist", res))
+        .catch(err => console.log("addBook Error", err))
     }
+    // function addBook(id) {
+    //     console.log(id)
+    // }
 
     /////layout here - component
     return (
@@ -94,7 +107,7 @@ function FindBooks(props) {
                                                     <h4>
                                                         {book.title} by {book.author}
                                                     </h4>
-                                                    <AddBookButton onClick={addBook(book.id)}/>
+                                                    <AddBookButton onClick={() => addBook(book.id)}/>
                                                 </ListItem>
                                             ))}
                                         </List>

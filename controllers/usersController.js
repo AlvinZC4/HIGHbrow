@@ -99,7 +99,7 @@ module.exports = {
         })
     },
     addBook: function(req, res) {
-        console.log("addBook endpoint hit, req: ", req)
+        console.log("addBook endpoint hit, req: ", req.body)
         const newBook = {
             id: req.body.id,
             title: req.body.title,
