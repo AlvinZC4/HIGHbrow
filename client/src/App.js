@@ -59,12 +59,16 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/">
-            <Login
-              loginForm={loginForm}
-              onChange={handleInputChange}
-              onClick={handleLoginSubmit}
-              user={user}
-            />
+            {user === "" ? (
+                <Login
+                loginForm={loginForm}
+                onChange={handleInputChange}
+                onClick={handleLoginSubmit}
+                user={user}
+              />
+            ) : (
+              <Wishlist user={user}/>
+            )}
           </Route>
           <Route exact path="/wishlist">
             <Wishlist user={user}/>

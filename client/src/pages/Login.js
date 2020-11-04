@@ -9,9 +9,9 @@ function Login(props) {
     const history = useHistory()
    
 
-    if (props.user !== "") {
-        history.push("/wishlist")
-    }
+    // if (props.user !== "") {
+    //     history.push("/wishlist")
+    // }
 
 
     return (
