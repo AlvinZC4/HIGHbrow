@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import UserWishlist from "../componets/UserWishlist"
 import WishlistItem from "../componets/WishlistItem"
-import {Container, Row, Col} from "../componets/Grid"
+import { Container, Row, Col } from "../componets/Grid"
 import API from "../utils/API"
 
 function Wishlist(props) {
@@ -9,14 +9,14 @@ function Wishlist(props) {
 
     useEffect(() => {
         loadUserBooks()
-    }, [])
+    }, [""])
 
     function loadUserBooks() {
         console.log(`${props.user}'s books loading`)
         const query = {
             username: props.user
         }
-        API.getUserBooks(query)
+        API.findBooks(query)
             .then(res => {
                 console.log("load books API response", res)
                 setMyBooks(res.data.userBooks)
@@ -32,17 +32,18 @@ function Wishlist(props) {
                         <UserWishlist>
                             {myBooks.map(book => {
                                 console.log("book", book)
-                               return (
-                                <WishlistItem key={book.id}>
-                                    <strong>
-                                        {book.Title} by {book.author}
-                                    </strong>
-                                </WishlistItem>
-                            )})}
+                                return (
+                                    <WishlistItem key={book.id}>
+                                        <strong>
+                                            {book.Title} by {book.author}
+                                        </strong>
+                                    </WishlistItem>
+                                )
+                            })}
                         </UserWishlist>
                     ) : (
-                        <h3>You have no books saved</h3>
-                    )}
+                            <h3>You have no books saved</h3>
+                        )}
                 </Col>
             </Row>
         </Container>

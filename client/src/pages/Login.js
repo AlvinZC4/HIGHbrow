@@ -14,6 +14,9 @@ function Login(props) {
             <Link to="/newuser">
                 Create New Account
             </Link>
+            <Link to="/getbooks">
+                Find books
+            </Link>
         </div>
     )
 
