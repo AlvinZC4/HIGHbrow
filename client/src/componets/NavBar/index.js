@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 
 function Navbar() {
 	return (
@@ -6,9 +7,7 @@ function Navbar() {
 			<section id="title">
 				<div className="container-fluid">
 					<nav className="navbar bg-info navbar-expand-lg navbar-dark fixed-top">
-						<a className="navbar-brand" href="home">
-							HIGHbrow
-						</a>
+						<span className="navbar-brand mb-0 h1">HIGHbrow</span>
 						<button
 							className="navbar-toggler"
 							type="button"
@@ -26,29 +25,19 @@ function Navbar() {
 						>
 							<ul className="navbar-nav ml-auto">
 								<li className="nav-item">
-									<a className="nav-link" href="home">
-										Home
-									</a>
+									<Link className="nav-link" to="/">Home</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="signup">
-										Create Registry
-									</a>
+									<Link className="nav-link" to="/newuser">Create Registry</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="Wishlist">
-										Create Wishlist
-									</a>
+									<Link className="nav-link" to="/wishlist">Create Wishlist</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="findReader">
-										Find Readers
-									</a>
+									<Link className="nav-link" to="/findreader">Find Readers</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="SignInButton">
-										Sign In
-									</a>
+									<Link className="nav-link" to="/login">Sign In</Link>
 								</li>
 							</ul>
 						</div>

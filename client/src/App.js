@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
 import Login from "./pages/Login";
 import NewUser from './pages/NewUser';
+import NavBar from "./componets/NavBar"
+import SigninButton from "./componets/SigninButton"
+import Home from "./pages/home"
 import Wishlist from "./pages/Wishlist"
 import FindBooks from "./pages/FindBooks"
 import API from "./utils/API"
@@ -61,8 +64,12 @@ function App() {
   return (
     <Router>
       <div>
+        <NavBar/>
         <Switch>
           <Route exact path="/">
+            <Home/>
+          </Route>
+          <Route exact path="/login">
           <Login
                 loginForm={loginForm}
                 onChange={handleInputChange}

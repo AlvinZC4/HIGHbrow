@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react"
-import {useHistory} from "react-router-dom"
+import {Container, Row, Col} from "../componets/Grid"
+import {useHistory, Link} from "react-router-dom"
 import LoginForm from "../componets/LoginForm"
-import {Link} from "react-router-dom"
+import Header from "../componets/Header"
 
 function Login(props) {
 
@@ -20,7 +21,11 @@ function Login(props) {
 
     return (
         <div>
-            <LoginForm
+            <Container>
+                <Row>
+                    <Col size="6, md-12">
+                    <Header text="Welcome Back HIGHbrower!"/>
+                    <LoginForm
                 loginForm={props.loginForm}
                 onChange={props.onChange} 
                 onClick={props.onClick}
@@ -31,9 +36,11 @@ function Login(props) {
             <Link to="/getbooks">
                 Find books
             </Link>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
-
 }
 
 export default Login
