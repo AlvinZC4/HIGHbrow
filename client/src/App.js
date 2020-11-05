@@ -1,20 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import {
-	BrowserRouter as Router,
-	Route,
-	Switch,
-	useHistory,
-} from 'react-router-dom';
-import Login from './pages/Login';
-import Wishlist from './pages/Wishlist';
-import API from './utils/API';
-import Signup from './pages/signup';
-import Navbar from './componets/NavBar';
-import Footer from './componets/Footer';
-import SigninButton from './componets/SigninButton';
-import FindReader from './pages/findReader';
-import Home from "./pages/home";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import React, {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
+import Login from "./pages/Login";
+import NewUser from './pages/NewUser';
+import Wishlist from "./pages/Wishlist"
+import API from "./utils/API"
 
 function App() {
 	const history = useHistory();
@@ -87,15 +76,25 @@ function App() {
 							<FindReader />
 						</Route>
 
-						<Route exact path="/wishlist">
-							<Wishlist user={user} />
-						</Route>
-					</Switch>
-				</div>
-			</Router>
-			<Footer />
-		</>
-	);
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/">
+            <Login
+              loginForm={loginForm}
+              onChange={handleInputChange} 
+              onClick={handleLoginSubmit}
+            />
+          </Route>
+          <Route exact path="/wishlist">
+            <Wishlist user={user}/>
+          </Route>
+          <Route exact path="/newuser" component={NewUser}/>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default App;

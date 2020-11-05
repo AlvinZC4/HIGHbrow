@@ -7,5 +7,8 @@ router.route("/username")
 
 router.route("/mywishlist")
     .post(usersController.findAllUserBooks)
+    
+router.route("/createuser")
+    .post(usersController.createUser)
 
 module.exports = router
