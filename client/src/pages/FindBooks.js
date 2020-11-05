@@ -71,10 +71,10 @@ function FindBooks(props) {
 
     /////layout here - component
     return (
-        <div>
+        <div className="mb-5">
             <Container>
-                <Row>
-                    <Col size="12 lg-8 md-6">
+                <Row classes="d-flex justify-content-center mb-3">
+                    <Col size="xs-12 sm-10 md-8 lg-6">
                         < SearchForm
                             handleInputChange={handleInputChange}
                             handleFormSubmit={handleFormSubmit}
@@ -84,34 +84,50 @@ function FindBooks(props) {
                 </Row>
                 
                     {props.user == "" ? (
-                        <Row>
-                            <Col size="12 lg-8 md-6">
-                                <h3>Please Login to Search Books</h3>
+                        <Row classes="d-flex justify-content-center mb-3">
+                            <Col size="xs-12 sm-10 md-8 lg-6">
+                                <h3 className="text-center">Please Login to Search Books</h3>
                             </Col>
                         </Row>
                     ) : (
                         <div>
-                            <Row>
-                                <Col size="12 lg-8 md-6">
+                            <Row classes="d-flex justify-content-center mb-3">
+                                <Col size="xs-12 sm-10 md-8 lg-6">
                                     <h2>Search Results</h2>
                                 </Col>
                             </Row>
-                            <Row>
-                                <Col size="12 lg-8 md-6">
+                            <Row classes="d-flex justify-content-center mb-3">
+                                <Col size="xs-12 sm-10 md-8 lg-6">
                                     {searchResults.length ? (
                                         <List>
                                             {searchResults.map(book => (
                                                 <ListItem key={book.id}>
-                                                    <BookImage bookimage={book.image}/>
-                                                    <h4>
-                                                        {book.title} by {book.author}
-                                                    </h4>
-                                                    <AddBookButton onClick={() => addBook(book.id)}/>
+                                                    <Container>
+                                                        <Row classes="d-flex justify-content-center">
+                                                            <Col size="4 sm-2">
+                                                                <BookImage bookimage={book.image}/>
+                                                            </Col>
+                                                            <Col size="5 sm-7" classes="d-flex">
+                                                                <h4 className="align-self-center">
+                                                                    {book.title} by {book.author}
+                                                                </h4>
+                                                            </Col>
+                                                            <Col size="3" classes="d-flex">
+                                                                <AddBookButton onClick={() => addBook(book.id)}/>
+                                                            </Col>
+                                                        </Row>
+                                                    </Container>
                                                 </ListItem>
                                             ))}
                                         </List>
                                     ) : (
-                                        <h3>No Results to Display</h3>
+                                        <Container>
+                                            <Row classes="d-flex justify-content-center">
+                                                <Col size="xs-12 sm-10 md-8 lg-6">
+                                                    <h3>No Results to Display</h3>
+                                                </Col>
+                                            </Row>
+                                        </Container>
                                     )}
                                 </Col>
                             </Row>
