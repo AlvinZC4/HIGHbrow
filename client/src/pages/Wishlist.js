@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
+import {Link} from "react-router-dom"
 import UserWishlist from "../componets/UserWishlist"
 import WishlistItem from "../componets/WishlistItem"
+import BookImage from "../componets/BookImage"
 import { Container, Row, Col } from "../componets/Grid"
 import API from "../utils/API"
 
@@ -16,9 +18,9 @@ function Wishlist(props) {
         const query = {
             username: props.user
         }
-        API.findBooks(query)
+        API.getUserBooks(query)
             .then(res => {
-                console.log("load books API response", res)
+                console.log("load books API response", res.data)
                 setMyBooks(res.data.userBooks)
             })
             .catch(err => console.log(err))
@@ -34,8 +36,9 @@ function Wishlist(props) {
                                 console.log("book", book)
                                 return (
                                     <WishlistItem key={book.id}>
+                                        <BookImage bookimage={book.image}/>
                                         <strong>
-                                            {book.Title} by {book.author}
+                                            {book.title} by {book.author}
                                         </strong>
                                     </WishlistItem>
                                 )
@@ -44,6 +47,11 @@ function Wishlist(props) {
                     ) : (
                             <h3>You have no books saved</h3>
                         )}
+                </Col>
+            </Row>
+            <Row>
+                <Col size="12">
+                    <Link to="/getbooks">Find Books</Link>
                 </Col>
             </Row>
         </Container>

@@ -48,7 +48,6 @@ function App() {
         else {
           console.log("Setting username in checkUserCreds")
           setUser(res.data.username)
-          history.push("/wishlist")
         }
       }
       )
@@ -60,11 +59,12 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/">
-            <Login
-              loginForm={loginForm}
-              onChange={handleInputChange}
-              onClick={handleLoginSubmit}
-            />
+          <Login
+                loginForm={loginForm}
+                onChange={handleInputChange}
+                onClick={handleLoginSubmit}
+                user={user}
+              />
           </Route>
           <Route exact path="/wishlist">
             <Wishlist user={user}/>
