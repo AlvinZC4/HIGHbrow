@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import {useHistory} from "react-router-dom"
 import LoginForm from "../componets/LoginForm"
 import {Link} from "react-router-dom"
@@ -9,9 +9,13 @@ function Login(props) {
     const history = useHistory()
    
 
-    // if (props.user !== "") {
-    //     history.push("/wishlist")
-    // }
+
+    useEffect(() => {
+        if (props.user !== "") {
+            history.push("/wishlist")
+        }
+    
+    })
 
 
     return (
