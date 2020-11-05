@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router
 import Login from "./pages/Login";
 import NewUser from './pages/NewUser';
 import NavBar from "./componets/NavBar"
+import Wrapper from "./componets/Wrapper"
 import SigninButton from "./componets/SigninButton"
 import Home from "./pages/home"
 import Wishlist from "./pages/Wishlist"
@@ -65,28 +66,30 @@ function App() {
     <Router>
       <div>
         <NavBar/>
-        <Switch>
-          <Route exact path="/">
-            <Home/>
-          </Route>
-          <Route exact path="/login">
-          <Login
-                loginForm={loginForm}
-                onChange={handleInputChange}
-                onClick={handleLoginSubmit}
+        <Wrapper>
+          <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route exact path="/login">
+            <Login
+                  loginForm={loginForm}
+                  onChange={handleInputChange}
+                  onClick={handleLoginSubmit}
+                  user={user}
+                />
+            </Route>
+            <Route exact path="/wishlist">
+              <Wishlist user={user}/>
+            </Route>
+            <Route exact path="/getbooks">
+              <FindBooks
                 user={user}
               />
-          </Route>
-          <Route exact path="/wishlist">
-            <Wishlist user={user}/>
-          </Route>
-          <Route exact path="/getbooks">
-            <FindBooks
-              user={user}
-            />
-          </Route>
-          <Route exact path="/newuser" component={NewUser}/>
-        </Switch>
+            </Route>
+            <Route exact path="/newuser" component={NewUser}/>
+          </Switch>
+        </Wrapper>
       </div>
     </Router>
   );
