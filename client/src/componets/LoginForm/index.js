@@ -38,7 +38,6 @@ function LoginForm(props) {
           </div>
           <div>
               <button onClick={props.onClick} className="btn btn-primary">Submit</button>
-              <button onClick={redirect} className="btn btn-primary">Submit</button>
           </div>
       </form>
     )
