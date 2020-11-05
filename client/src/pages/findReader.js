@@ -3,7 +3,7 @@ import React from 'react';
 function FindReader() {
 	return (
 		<>
-			 <div className="container">
+			<div className="container">
 				<div className="panel-heading">
 					<div className="panel-title text-center">
 						<h1 className="">Create Your Account</h1>
@@ -75,26 +75,6 @@ function FindReader() {
 						</div>
 
 						<div className="form-group">
-							<label for="email" className="cols-sm-2 control-label">
-								Phone:
-							</label>
-							<div className="cols-sm-10">
-								<div className="input-group">
-									<span className="input-group-addon iconbk">
-										<i className="fa fa-phone"></i>
-									</span>
-									<input
-										type="text"
-										className="form-control formcontrolcls"
-										name="phone"
-										id="phone"
-										placeholder="Enter your Phone # "
-									/>
-								</div>
-							</div>
-						</div>
-
-						<div className="form-group">
 							<button
 								type="button"
 								className="btn btn-info btn-lg btn-block login-button"
@@ -104,10 +84,7 @@ function FindReader() {
 						</div>
 					</form>
 				</div>
-      </div> 
-
-
-  
+			</div>
 		</>
 	);
 }

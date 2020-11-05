@@ -16,8 +16,8 @@ function Home() {
 						</a>
 					</div>
 
-					<div className="col-lg-8">
-						<img className="lady" src="/images/images/curledup.jpg" />
+					<div className="col-lg-8 w-100%">
+						<img className="lady" src="/images/images/curledup.jpg" alt="lady curled up with book"/>
 					</div>
 
 				
@@ -34,7 +34,7 @@ function Home() {
 						</div>
 						<div className="row text-center">
 							<div className="col-md-4">
-								<span className="fa-stack fa-4x">
+								<span className="fa-stack fa-2x">
 									<i className="fa fa-circle fa-stack-2x text-primary"></i>
 									<i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
 								</span>
@@ -46,7 +46,7 @@ function Home() {
 							</div>
 
 							<div className="col-md-4">
-								<span className="fa-stack fa-4x">
+								<span className="fa-stack fa-2x">
 									<i className="fas fa-circle fa-stack-2x text-primary"></i>
 									<i className="fas fa-laptop fa-stack-1x fa-inverse"></i>
 								</span>
@@ -58,7 +58,7 @@ function Home() {
 								</p>
 							</div>
 							<div className="col-md-4">
-								<span className="fa-stack fa-4x">
+								<span className="fa-stack fa-2x">
 									<i className="fa fa-circle fa-stack-2x text-primary"></i>
 									<i className=" fas fa-virus-slash fa-stack-1x fa-inverse"></i>
 								</span>
@@ -78,7 +78,7 @@ function Home() {
 								</div>
 								<div className="row text-center">
 									<div className="col-ml 5I ">
-										<span className="fa-stack fa-4x">
+										<span className="fa-stack fa-2x">
 											<i className="fa fa-circle fa-stack-2x text-primary"></i>
 											<i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
 										</span>
@@ -91,7 +91,7 @@ function Home() {
 								</div>
 
 								<div className="col-md-4">
-									<span className="fa-stack fa-4x">
+									<span className="fa-stack fa-2x">
 										<i className="fas fa-circle fa-stack-2x text-primary"></i>
 										<i className="fas fa-laptop fa-stack-1x fa-inverse"></i>
 									</span>
@@ -102,7 +102,7 @@ function Home() {
 									</p>
 								</div>
 								<div className="col-md-4">
-									<span className="fa-stack fa-4x">
+									<span className="fa-stack fa-2x">
 										<i className="fa fa-circle fa-stack-2x text-primary"></i>
 										<i className=" fas fa-virus-slash fa-stack-1x fa-inverse"></i>
 									</span>
