@@ -22,20 +22,14 @@ function Login(props) {
     return (
         <div>
             <Container>
-                <Row>
-                    <Col size="6, md-12">
-                    <Header text="Welcome Back HIGHbrower!"/>
-                    <LoginForm
-                loginForm={props.loginForm}
-                onChange={props.onChange} 
-                onClick={props.onClick}
-            />
-            <Link to="/newuser">
-                Create New Account
-            </Link>
-            <Link to="/getbooks">
-                Find books
-            </Link>
+                <Row classes="d-flex justify-content-center mb-3">
+                    <Col size="xs-12 sm-10 md-8 lg-6">
+                        <Header text="Welcome Back HIGHbrower!"/>
+                        <LoginForm
+                            loginForm={props.loginForm}
+                            onChange={props.onChange} 
+                            onClick={props.onClick}
+                        />
                     </Col>
                 </Row>
             </Container>

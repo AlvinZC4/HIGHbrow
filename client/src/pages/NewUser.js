@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import {Container, Row, Col} from "../componets/Grid"
 import CreateUserForm from "../componets/CreateUserForm"
+import Header from "../componets/Header"
 import {Link} from "react-router-dom"
 import API from "../utils/API"
 
@@ -54,8 +55,9 @@ function NewUser() {
 
     return (
         <Container>
-            <Row classes=" d-flex justify-content-center mb-3">
+            <Row classes="d-flex justify-content-center mb-3">
                 <Col size="xs-12 sm-10 md-8 lg-6">
+                    <Header text="Register Here To Get Started"/>
                     <CreateUserForm
                         newUserForm={newUserform}
                         onChange={handleInputChange}
