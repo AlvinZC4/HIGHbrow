@@ -20,7 +20,7 @@ const UserSchema = new Schema ({
     ],
     following: [
         {
-            username: {type: String, unique: true, required: true}
+            username: {type: String}
         }
     ]
 })
