@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import NewUser from './pages/NewUser';
 import NavBar from "./componets/NavBar"
 import Wrapper from "./componets/Wrapper"
-import SigninButton from "./componets/SigninButton"
+import Footer from "./componets/Footer"
 import Home from "./pages/home"
 import Wishlist from "./pages/Wishlist"
 import FindBooks from "./pages/FindBooks"
@@ -90,6 +90,7 @@ function App() {
             <Route exact path="/newuser" component={NewUser}/>
           </Switch>
         </Wrapper>
+        <Footer/>
       </div>
     </Router>
   );

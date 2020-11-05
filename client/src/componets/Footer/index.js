@@ -1,9 +1,10 @@
 import React from 'react';
+import "./styles.css"
 
 function Footer() {
 	return (
 		<>
-			<footer class="footer py-4">
+			<footer class="footer mt-auto py-4">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-4 text-lg-left">

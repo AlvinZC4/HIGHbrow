@@ -44,9 +44,9 @@ function Wishlist(props) {
                                                     <BookImage bookimage={book.image}/>
                                                 </Col>
                                                 <Col size="8 sm-10" classes="d-flex">
-                                                    <h5 className="align-self-center">
+                                                    <h4 className="align-self-center">
                                                         {book.title} by {book.author}
-                                                    </h5>
+                                                    </h4>
                                                 </Col>
                                             </Row>
                                         </Container>

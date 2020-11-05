@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import SearchForm from "../componets/SearchForm/SearchForm";
 import {Container, Row, Col} from "../componets/Grid"
-import Jumbotron from "../componets/Jumbotron"
 import {List, ListItem} from "../componets/List"
 import BookImage from "../componets/BookImage"
 import AddBookButton from "../componets/AddBookButton"
