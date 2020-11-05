@@ -93,7 +93,7 @@ function CreateUserForm(props) {
                 placeholder="Re-type Your Password"
             />
           </div>
-          <div>
+          <div className="d-flex justify-content-center">
               <button onClick={props.onClick} className="btn btn-primary">Submit</button>
           </div>
       </form>

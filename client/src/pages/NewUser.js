@@ -53,21 +53,14 @@ function NewUser() {
     }
 
     return (
-        <Container fluid>
-            <Row>
-                <Col size="12">
+        <Container>
+            <Row classes=" d-flex justify-content-center mb-3">
+                <Col size="xs-12 sm-10 md-8 lg-6">
                     <CreateUserForm
                         newUserForm={newUserform}
                         onChange={handleInputChange}
                         onClick={handleNewUserSubmit}
                     />
-                </Col>
-            </Row>
-            <Row>
-                <Col size="12">
-                    <Link to="/">
-                        Back to Login
-                    </Link>
                 </Col>
             </Row>
         </Container>
