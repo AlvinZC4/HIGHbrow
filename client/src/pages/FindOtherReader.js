@@ -4,6 +4,7 @@ import Header from "../componets/Header"
 import SearchForm from "../componets/SearchForm/SearchForm"
 import {List, ListItem} from "../componets/List"
 import BookImage from "../componets/BookImage"
+import API from "../utils/API"
 
 function FindReader(props) {
 
@@ -11,7 +12,11 @@ function FindReader(props) {
         search: ""
     });
 
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchResults, setSearchResults] = useState({
+        firstName: "",
+        lastName: "",
+        userBooks: []
+    });
 
     useEffect(() => {
         console.log("searchResults", searchResults)
@@ -22,7 +27,15 @@ function FindReader(props) {
             return
         }
         else {
+            const query = {
+                email: search.search
+            }
             console.log("findReader Search", search.search)
+            API.findReader(query)
+                .then(res => {
+                    console.log("findReader search result", res.data)
+                    setSearchResults(res.data)
+                })
         }
     }
 

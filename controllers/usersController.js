@@ -121,7 +121,7 @@ module.exports = {
     findReader: function(req, res) {
         console.log("findReader Endpoint hit, req.body:", req.body)
         db.User
-            .findOne({email: req.body}, "firstName lastName userBooks")
+            .findOne({email: req.body.email}, "firstName lastName userBooks")
             .then(dbModel => {
                 res.json(dbModel)
                 console.log("findReader response", dbModel)

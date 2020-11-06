@@ -14,7 +14,7 @@ export default {
         return axios.post("api/users/createuser", user)
     },
     findReader: function(query) {
-        return axios.post("api/users/findreader")
+        return axios.post("api/users/findreader", query)
     },
     addBook: function(user, bookData) {
         return axios.put("api/users/" + user, bookData)
