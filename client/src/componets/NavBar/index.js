@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from "react-router-dom"
+import "./style.css"
 
 function Navbar() {
 	return (
-				<nav className="navbar bg-info navbar-expand-md navbar-dark mb-3" id="title">
+				<nav className=" navbar bg-info navbar-expand-md navbar-dark mb-3" id="title">
 					<span className="navbar-brand mb-0 h1">HIGHbrow</span>
 					<button
 						className="navbar-toggler"
