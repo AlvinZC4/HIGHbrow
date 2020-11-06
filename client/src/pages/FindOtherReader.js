@@ -78,9 +78,9 @@ function FindReader(props) {
                     ) : (
                     <div>
                         {searchResults.firstName === "" ? (
-                            <Row classes="d-flex justiry-content-center mb-3">
+                            <Row classes="d-flex justify-content-center mb-3">
                                 <Col size="xs-12 sm-10 md-8 lg-6">
-                                    <h3 className="text-center">No User Found with E-mail provided</h3>
+                                    <h3 className="text-center">No User Found with E-mail Provided</h3>
                                 </Col>
                             </Row>
                         ) : (
