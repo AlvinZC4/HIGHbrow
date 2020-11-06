@@ -8,6 +8,7 @@ import Footer from "./componets/Footer"
 import Home from "./pages/home"
 import Wishlist from "./pages/Wishlist"
 import FindBooks from "./pages/FindBooks"
+import FindReader from "./pages/FindOtherReader"
 import API from "./utils/API"
 
 function App() {
@@ -84,6 +85,11 @@ function App() {
             </Route>
             <Route exact path="/getbooks">
               <FindBooks
+                user={user}
+              />
+            </Route>
+            <Route exact path ="/findreader">
+              <FindReader 
                 user={user}
               />
             </Route>
