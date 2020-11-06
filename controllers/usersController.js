@@ -117,5 +117,18 @@ module.exports = {
                 res.status(422).json(err)
                 console.log("getbook res error", err)
             })
+    },
+    findReader: function(req, res) {
+        console.log("findReader Endpoint hit, req.body:", req.body)
+        db.User
+            .findOne({email: req.body}, "firstName lastName userBooks")
+            .then(dbModel => {
+                res.json(dbModel)
+                console.log("findReader response", dbModel)
+            })
+            .catch(err => {
+                res.status(422).json(err)
+                console.log("findReader error", err)
+            })
     }
 }
