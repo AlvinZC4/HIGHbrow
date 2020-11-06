@@ -77,44 +77,55 @@ function FindReader(props) {
                         </Row>
                     ) : (
                     <div>
-                        <Row classes="d-flex justify-content-center mb-3">
-                            <Col size="xs-12 sm-10 md-8 lg-6">
-                                <h2>{searchResults.firstName} {searchResults.lastName}'s Wishlist</h2>
-                            </Col>
-                        </Row>
-                        <Row classes="d-flex justify-content-center mb-3">
-                            <Col size="xs-12 sm-10 md-8 lg-6">
-                                {searchResults.userBooks.length ? (
-                                    <List>
-                                        {searchResults.userBooks.map(book => (
-                                            <ListItem key={book.id}>
-                                                <Container>
-                                                    <Row classes="d-flex justify-content-center">
-                                                        <Col size="4 sm-2">
-                                                            <BookImage bookimage={book.image}/>
-                                                        </Col>
-                                                        <Col size="8 sm-10" classes="d-flex">
-                                                            <h4 className="align-self-center">
-                                                                {book.title} by {book.author}
-                                                            </h4>
-                                                        </Col>
-                                                    </Row>
-                                                </Container>
-                                            </ListItem>
-                                        ))}
-                                    </List>
-                                ) : (
-                                    <Container>
-                                        <Row classes="d-flex justify-content-center">
-                                            <Col size="xs-12 sm-10 md-8 lg-6">
-                                                <h3>{searchResults.firstName} {searchResults.lastName} Has No Books in Their Wishlist</h3>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                )}
-                            </Col>
-                        </Row>
+                        {searchResults.firstName === "" ? (
+                            <Row classes="d-flex justiry-content-center mb-3">
+                                <Col size="xs-12 sm-10 md-8 lg-6">
+                                    <h3 className="text-center">No User Found with E-mail provided</h3>
+                                </Col>
+                            </Row>
+                        ) : (
+                            <div>
+                            <Row classes="d-flex justify-content-center mb-3">
+                                <Col size="xs-12 sm-10 md-8 lg-6">
+                                    <h2>{searchResults.firstName} {searchResults.lastName}'s Wishlist</h2>
+                                </Col>
+                            </Row>
+                            <Row classes="d-flex justify-content-center mb-3">
+                                <Col size="xs-12 sm-10 md-8 lg-6">
+                                    {searchResults.userBooks.length !== 0 ? (
+                                        <List>
+                                            {searchResults.userBooks.map(book => (
+                                                <ListItem key={book.id}>
+                                                    <Container>
+                                                        <Row classes="d-flex justify-content-center">
+                                                            <Col size="4 sm-2">
+                                                                <BookImage bookimage={book.image}/>
+                                                            </Col>
+                                                            <Col size="8 sm-10" classes="d-flex">
+                                                                <h4 className="align-self-center">
+                                                                    {book.title} by {book.author}
+                                                                </h4>
+                                                            </Col>
+                                                        </Row>
+                                                    </Container>
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    ) : (
+                                        <Container>
+                                            <Row classes="d-flex justify-content-center">
+                                                <Col size="xs-12 sm-10 md-8 lg-6">
+                                                    <h3>{searchResults.firstName} {searchResults.lastName} Has No Books in Their Wishlist</h3>
+                                                </Col>
+                                            </Row>
+                                        </Container>
+                                    )}
+                                </Col>
+                            </Row>
+                        </div>
+                        )}
                     </div>
+                   
                 )}
             </Container>
         </div>
