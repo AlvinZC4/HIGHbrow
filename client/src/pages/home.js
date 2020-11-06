@@ -47,7 +47,9 @@ function Home() {
 						<div className="container-fluid">
 							<div className="row text-center">
 								<div className="col-md-4">
-									<FaCcMastercard size="6rem" color="cornflowerblue" />
+									<FaCcMastercard size="6rem" 
+									color="cornflowerblue"
+									/>
 
 									<h3 className="my-3">E-Commerce</h3>
 									<h5 className="text-muted">
@@ -78,6 +80,8 @@ function Home() {
 							</div>
 						</div>
 
+						<hr/>
+
 						<div className="container-fluid" id="about">
 							<div className="text-center">
 								<h1 className="section-heading text-uppercase">How it Works</h1>
@@ -105,10 +109,10 @@ function Home() {
 								<div className="col-md-4">
 								<FaUps size="6rem" color="cornflowerblue" />
 									<h3 className="my-3">Step 3 </h3>
-									<p className="text-muted">
+									<h5 className="text-muted">
 										Just listen out for the doorbell or your email notification
 										that your gift has arrived.
-									</p>
+									</h5>
 								</div>
 							</div>
 
@@ -117,7 +121,7 @@ function Home() {
 									"This was the best invention to read, gift and share books."
 								</h3>
 								<img
-									className="t-image w-50%"
+									className="t-image "
 									src="/images/images/bookclub.jpg"
 									alt="lady-profile"
 								/>
