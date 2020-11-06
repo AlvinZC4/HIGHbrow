@@ -122,7 +122,7 @@ function FindBooks(props) {
                                     <Container>
                                         <Row classes="d-flex justify-content-center">
                                             <Col size="xs-12 sm-10 md-8 lg-6">
-                                                <h3>No Results to Display</h3>
+                                                <h3 className="text-center">No Results to Display</h3>
                                             </Col>
                                         </Row>
                                     </Container>
