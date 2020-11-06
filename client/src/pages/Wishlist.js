@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import UserWishlist from "../componets/UserWishlist"
 import WishlistItem from "../componets/WishlistItem"
 import BookImage from "../componets/BookImage"
+import Header from "../componets/Header"
 import { Container, Row, Col } from "../componets/Grid"
 import API from "../utils/API"
 
@@ -27,31 +28,37 @@ function Wishlist(props) {
     }
 
     return (
-        <Container fluid>
-            <Row>
-                <Col size="md-8">
+        <Container>
+            <Row classes="d-flex justify-content-center mb-3">
+                <Col size="xs-12 sm-10 md-8 lg-6">
+                    <Header text="My Wishlist"/>
                     {myBooks.length ? (
                         <UserWishlist>
                             {myBooks.map(book => {
                                 console.log("book", book)
                                 return (
                                     <WishlistItem key={book.id}>
-                                        <BookImage bookimage={book.image}/>
-                                        <strong>
-                                            {book.title} by {book.author}
-                                        </strong>
+                                        <Container>
+                                            <Row classes="d-flex justify-content-center">
+                                                <Col size="4 sm-2">
+                                                    <BookImage bookimage={book.image}/>
+                                                </Col>
+                                                <Col size="8 sm-10" classes="d-flex">
+                                                    <h4 className="align-self-center">
+                                                        {book.title} by {book.author}
+                                                    </h4>
+                                                </Col>
+                                            </Row>
+                                        </Container>
                                     </WishlistItem>
                                 )
                             })}
                         </UserWishlist>
                     ) : (
-                            <h3>You have no books saved</h3>
+                            <div className="d-flex justify-content-center mb-3">
+                                <h3>You have no books saved</h3>
+                            </div>
                         )}
-                </Col>
-            </Row>
-            <Row>
-                <Col size="12">
-                    <Link to="/getbooks">Find Books</Link>
                 </Col>
             </Row>
         </Container>

@@ -6,8 +6,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.3",
     "xml2js": "^0.4.23"
