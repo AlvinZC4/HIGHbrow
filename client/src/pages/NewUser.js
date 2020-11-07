@@ -156,6 +156,9 @@ function NewUser() {
                         })
                         setSuccess(true)
                     })
+                    .catch(err => {
+                        console.log("Could not create new user", err)
+                    })
             
         }
         else {
