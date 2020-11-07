@@ -14,10 +14,9 @@
   1. [How to Install HIGHbrow!](#Installation)
   2. [Using HIGHbrow!](#How%20To%20Use%20This%20Application)
   3. [Testing HIGHbrow!](#Test%20Code)
-  4. [View HIGHbrow! Demo ](#Demo)
-  5. [Link to the Deployed HIGHbrow! App in Github ](#Link%20to%20the%20Deployed%20App%20in%20Github)
-  6. [Ask Us Questions](#Ask%20Questions)
-  7. [Licenses](#License)
+  4. [Link to the Deployed HIGHbrow! App in Github ](#Link%20to%20the%20Deployed%20App%20in%20Github)
+  5. [Ask Us Questions](#Ask%20Questions)
+  6. [Licenses](#License)
   ***
 
   ## Installation
@@ -36,12 +35,12 @@
   Click here: https://drive.google.com/file/d/18PyJEHA1V9nov-993pq8Dkk1qeO-4HfD/view
 
   ## Link to the Deployed App in Github
-  https://github.com/AlvinZC4/HIGHbrow 
+  https://obscure-wildwood-73089.herokuapp.com/
 
   ## Ask Questions
-  Visit my GitHub Page: [My GitHub Profile Page](https://github.com/AlvinZC4, Mapaige, purilisa)
+  Visit my GitHub Page: [My GitHub Profile Page](https://github.com/AlvinZC4, https://github.com/Mapaige, https://github.com/purilisa)
  -OR-
- Drop me an e-mail at: test@email.com
+ Drop me an e-mail at: suvarnalisa@yahoo.com
 
 
   ## License
