@@ -29,10 +29,10 @@ function Navbar() {
 								<Link className="nav-link" to="/newuser">Create Registry</Link>
 							</li>
 							<li className="nav-item">
-								<Link className="nav-link" to="/wishlist">My Wishlist</Link>
+								<Link className="nav-link" to="/getbooks">Find Books</Link>
 							</li>
 							<li className="nav-item">
-								<Link className="nav-link" to="/getbooks">Find Books</Link>
+								<Link className="nav-link" to="/wishlist">My Wishlist</Link>
 							</li>
 							<li className="nav-item">
 								<Link className="nav-link" to="/findreader">Find Readers</Link>
