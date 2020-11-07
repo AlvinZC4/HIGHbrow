@@ -1,8 +1,16 @@
 import React from 'react';
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 import "./style.css"
 
 function Navbar(props) {
+
+    const history = useHistory()
+
+	function signOut() {
+		props.logout()
+		history.push("/")
+
+	}
 	return (
 				<nav className=" navbar bg-info navbar-expand-md navbar-dark mb-3" id="title">
 					<span className="navbar-brand mb-0 h1">HIGHbrow</span>
@@ -41,7 +49,7 @@ function Navbar(props) {
 								{props.user === "" ? (
 									<Link className="nav-link" to="/login">Sign In</Link>
 								) : (
-									<a className="nav-link logout" onClick={props.logout}>Logout</a>
+									<a className="nav-link logout" onClick={signOut}>Logout</a>
 								)}
 							</li>
 						</ul>
