@@ -3,14 +3,6 @@ import {useHistory} from "react-router-dom"
 
 function CreateUserForm(props) {
 
-    // const history = useHistory()
-
-    // function redirect(event) {
-    //   event.preventDefault()
-    //   history.push("/wishlist")
-    // }
-
-
     return(
       <div className="main-login main-center ">
         <form className="create-user ">
@@ -41,7 +33,13 @@ function CreateUserForm(props) {
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Your First Name"
+                aria-describedby="new-first-name"
             />
+            {props.validate.firstName == true ? (
+              <small id="new-first-name" className="form-text text-white">Enter your first name</small>
+            ) : (
+              <small id="new-first-name" className="form-text validate">Must enter your first name</small>
+            )}
           </div>
           <div className="form-group  ">
             <label htmlFor="last-name">Last Name</label>
@@ -52,7 +50,13 @@ function CreateUserForm(props) {
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Your Last Name"
+                aria-describedby="new-last-name"
             />
+            {props.validate.lastName == true ? (
+              <small id="new-last-name" className="form-text text-white">Enter your last name</small>
+            ) : (
+              <small id="new-last-name" className="form-text validate">Must enter your last name</small>
+            )}
           </div>
           <div className="form-group  ">
             <label htmlFor="phone">Enter Your Phone Number</label>
@@ -63,7 +67,13 @@ function CreateUserForm(props) {
                 onChange={props.onChange}
                 className="form-control"
                 placeholder="Enter Your Phone Number Here"
+                aria-describedby="new-phone"
             />
+            {props.validate.phone == true ? (
+              <small id="new-phone" className="form-text text-white">Enter your phone number</small>
+            ) : (
+              <small id="new-phone" className="form-text validate">Enter a valid phone number</small>
+            )}
           </div>
           <div className="form-group  ">
             <label htmlFor="email">E-mail</label>
@@ -77,7 +87,7 @@ function CreateUserForm(props) {
                 aria-describedby="new-email"
             />
                 {props.validate.email == true ? (
-                  <small id="new-email" className="form-text text-white">Enter a valid e-mail address</small>
+                  <small id="new-email" className="form-text text-white">Enter your e-mail address</small>
                 ) : (
                   <small id="new-email" className="form-text validate">Enter a valid e-mail address</small>
                 )}
@@ -112,7 +122,7 @@ function CreateUserForm(props) {
                 aria-describedby="confirm-password"
             />
               {props.validate.passwordConfirm == true ? (
-                <small id="confirm-password" className="form-text text-white">Passwords must match</small>
+                <small id="confirm-password" className="form-text text-white">Re-type your password</small>
               ) : (
                 <small id="confirm-password" className="form-text validate">Passwords must match</small>
               )}

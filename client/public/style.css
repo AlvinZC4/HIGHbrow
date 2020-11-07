@@ -145,3 +145,8 @@ input::-webkit-input-placeholder {
     width: 27.5em;  height: 3em;
 
 }
+
+.validate {
+	color: red;
+	background-color: lightpink;
+}
