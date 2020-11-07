@@ -16,11 +16,6 @@ function FindBooks(props) {
     const [searchResults, setSearchResults] = useState([]);
     let bookSearchResults = []
 
-    useEffect(() => {
-        console.log("searchResults", searchResults)
-    }, [searchResults])
-
-
     const searchBooks = () => {
 
         if (props.user == "") {
@@ -30,11 +25,9 @@ function FindBooks(props) {
             console.log(search.search);
             API.findBooks(search.search)
                 .then(res => {
-                    console.log("api search result", res.data);
                     //if res.data
                     bookSearchResults = res.data
                     setSearchResults(res.data)
-                    console.log("bookSearchResults", bookSearchResults)
                 });
     
         }
@@ -55,9 +48,7 @@ function FindBooks(props) {
 
     function addBook(id) {
         console.log("addBook function hit")
-        console.log("bookSearch Results in addBook", bookSearchResults)
         const bookToAdd = searchResults.find(book => book.id === id)
-        console.log("booktoAdd", bookToAdd)
 
         API.addBook(props.user, bookToAdd)
         .then(res => console.log("Book added to wishlist", res))

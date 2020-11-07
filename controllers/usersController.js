@@ -5,19 +5,16 @@ const saltRounds = 10
 module.exports = {
     findAllUserBooks: function(req, res) {
         console.log("findAllUserBooks End Point")
-        console.log("UserBooks req.body", req.body)
         db.User
             .findOne({username: req.body.username}, "userBooks")
             .sort({title: 1})
             .then(dbModel => {
-                console.log("UserBooks Response", dbModel)
                 res.json(dbModel)
             })
             .catch(err => res.status(422).json(err))
     },
     findUsername: function(req, res) {
         console.log("findUser End Point")
-        console.log("findUserName req.body", req.body)
         db.User
             .findOne({username: req.body.username}, "username password userBooks following")
             .then(dbModel => {
@@ -38,8 +35,6 @@ module.exports = {
                             following: dbModel.following
                         }
                         res.json(userReturn)
-                        console.log("userReturn", userReturn)
-                        console.log("controller endpoint", dbModel)
                     }
                     else {
                         throw err
@@ -50,7 +45,6 @@ module.exports = {
     },
     createUser: function(req, res) {
         console.log("createUser End Point")
-        console.log("createUser req.body", req.body)
 
         // Salt and hash password sent from front-end
         const plainTextPassword = req.body.password
@@ -81,13 +75,11 @@ module.exports = {
                             phone: req.body.phone,
                             email: req.body.email
                         }
-                        console.log("newUser", newUser)
 
                         db.User
                             .create(newUser)
                             .then(dbModel => {
                                 res.json(dbModel)
-                                console.log("createUser res", dbModel)
                             })
                             .catch(err => {
                                 res.status(422).json(err)
@@ -99,7 +91,7 @@ module.exports = {
         })
     },
     addBook: function(req, res) {
-        console.log("addBook endpoint hit, req: ", req.body)
+        console.log("addBook endpoint hit")
         const newBook = {
             id: req.body.id,
             title: req.body.title,
@@ -111,7 +103,6 @@ module.exports = {
             .findOneAndUpdate({username: req.params.username}, {$push: {userBooks: newBook}})
             .then(dbModel => {
                 res.json(dbModel)
-                console.log("addBook response", dbModel)
             })
             .catch(err => {
                 res.status(422).json(err)
@@ -119,12 +110,11 @@ module.exports = {
             })
     },
     findReader: function(req, res) {
-        console.log("findReader Endpoint hit, req.body:", req.body)
+        console.log("findReader Endpoint hit")
         db.User
             .findOne({email: req.body.email}, "firstName lastName userBooks")
             .then(dbModel => {
                 res.json(dbModel)
-                console.log("findReader response", dbModel)
             })
             .catch(err => {
                 res.status(422).json(err)

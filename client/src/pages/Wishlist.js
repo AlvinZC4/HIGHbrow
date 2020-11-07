@@ -23,7 +23,6 @@ function Wishlist(props) {
         }
         API.getUserBooks(query)
             .then(res => {
-                console.log("load books API response", res.data)
                 setMyBooks(res.data.userBooks)
             })
             .catch(err => console.log(err))

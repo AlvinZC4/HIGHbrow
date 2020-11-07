@@ -35,7 +35,6 @@ function NewUser() {
             password: true,
             passwordConfirm: true,
         })
-
         setSuccess(false)
     }, [])
 
@@ -135,7 +134,6 @@ function NewUser() {
                 })
             }
                 // Now Carry out the createUser query for the database
-                console.log("input from newUserForm", newUserform)
                 const newUserPost = {
                     username: newUserform.username,
                     firstName: newUserform.firstName,
@@ -144,10 +142,8 @@ function NewUser() {
                     email: newUserform.email,
                     password: newUserform.passwordConfirm
                 }
-                console.log("New User info to Database", newUserPost)
                 API.createUser(newUserPost)
                     .then(res => {
-                        console.log("create new user response", res)
                         setValidate({
                             username: true,
                             email: true,
