@@ -53,10 +53,10 @@ function FindReader(props) {
             <Container>
                 <Row classes="d-flex justify-content-center mb-3">
                     <Col size="xs-12 sm-10 md-8 lg-6">
-                        <Header text="Search for Other HIGHbrower's Wishlists"/>
+                        <Header text="Find Your HIGHbrower"/>
                         <SearchForm 
-                             label="Find another user by e-mail address"
-                             placeHolder="Type e-mail here"
+                             label="Enter your HIGHbrowers' email"
+                             placeHolder="Enter e-mail here"
                              id="findReader"
                              handleInputChange={handleInputChange}
                              handleFormSubmit={handleFormSubmit}
