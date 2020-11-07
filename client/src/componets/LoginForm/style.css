@@ -10,7 +10,8 @@
  	margin-top: 70px;
 }
 .form-group{
-	margin-bottom: 15px;
+    margin-bottom: 15px;
+    
 }
 
 input,
@@ -20,7 +21,7 @@ input::-webkit-input-placeholder {
 }
 
 .main-login{
- 	background-color: #1696b9;
+ 	background-color:cornflowerblue;
    /* shadows and rounded borders  */
      -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -55,7 +56,7 @@ label{
     padding: 9px; 
     border: solid 1px #4B718B; 
     outline: 0; 
-   background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #9DDAEC), to(#FFFFFF)); 
+   background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(25%, #9DDAEC), to(#FFFFFF)); 
      background: -moz-linear-gradient(top, #FFFFFF, #9DDAEC 1px, #FFFFFF 25px); 
     box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
     -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 

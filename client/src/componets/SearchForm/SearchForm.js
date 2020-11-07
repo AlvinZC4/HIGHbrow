@@ -16,7 +16,7 @@ function SearchForm(props) {
                     id="search"
                 />
                 <div className="d-flex justify-content-center">
-                    <button onClick={props.handleFormSubmit} className="btn btn-infogi mt-3 search-btn">Search</button>
+                    <button onClick={props.handleFormSubmit} className="btn btn-info mt-3 search-btn">Search</button>
                 </div>
             </div>
         </form>
