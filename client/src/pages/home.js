@@ -12,13 +12,13 @@ import { RiHome5Fill, RiVirusLine } from 'react-icons/ri';
 function Home() {
 	return (
 		<>
-			<div className="container">
+			<div className="container intro">
 				<div className="row">
-					<div className="col-lg-4">
+					<div className="col-lg-4 ">
 						<h1> Welcome to HIGHbrow!</h1>
-						<h3 className="subtitle">A Gift Registry for Book Lovers</h3>
+						<h2 className="subtitle">A Gift Registry for Book Lovers</h2>
 						<a
-							className="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
+							className="btn tell btn-info  btn-xl text-uppercase js-scroll-trigger color= "
 							href="#about"
 						>
 							Tell Me More

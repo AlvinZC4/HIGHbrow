@@ -34,7 +34,7 @@ h2 {
 }
 
 .t-image {
-	width: 30%;
+	width: 50%;
 	border-radius: 80%;
 	margin: 20px;
 }
@@ -130,4 +130,14 @@ input::-webkit-input-placeholder {
 
 .wish {
 	text-align: center;
+}
+
+.intro{
+	padding-top: 25px;
+}
+
+.tell {
+		
+    width: 27.5em;  height: 3em;
+
 }

@@ -1,10 +1,11 @@
 import React from "react";
+import "./style.css"
 
 function SearchForm(props) {
     return (
         <form>
             <div className="form-group">
-                <label htmlFor="search">Find a book to add to your wishlist!:</label>
+                <h1 htmlFor="search" className="search-in">Find a book to add to your wishlist!</h1>
                 <input
                     onChange={props.handleInputChange}
                     value={props.search}
@@ -15,7 +16,7 @@ function SearchForm(props) {
                     id="search"
                 />
                 <div className="d-flex justify-content-center">
-                    <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">Search</button>
+                    <button onClick={props.handleFormSubmit} className="btn btn-infogi mt-3 search-btn">Search</button>
                 </div>
             </div>
         </form>
