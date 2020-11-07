@@ -18,7 +18,7 @@ function Home() {
 						<h1> Welcome to HIGHbrow!</h1>
 						<h2 className="subtitle">A Gift Registry for Book Lovers</h2>
 						<a
-							className="btn tell btn-info  btn-xl text-uppercase js-scroll-trigger color= "
+							className="btn tell bg-info  btn-xl text-uppercase js-scroll-trigger color= "
 							href="#about"
 						>
 							Tell Me More
@@ -73,8 +73,7 @@ function Home() {
 									<h3 className="my-3">COVID free</h3>
 									<h5 className="text-muted">
 										No trips to the bookstore! <br />
-										This keeps your chances and your loved ones chances of
-										contracting the virus low.
+										What a great way to protect your recipients and loved ones during this pandemic. All while putting a smile on someones' face.
 									</h5>
 								</div>
 							</div>

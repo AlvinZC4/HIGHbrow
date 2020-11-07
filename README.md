@@ -1,68 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Script
+  ***
+  ## READMe Generator
+  ***
 
-In the project directory, you can run:
+  HIGHbrow!
 
-### `npm start`
+  This is a book registry app, where you can create a wishlist of books that you would like to read and create a registry. You can share the link with your friends and family and they can gift you a book.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  ***
+  ## Table of Contents:
+  1. [How to Install HIGHbrow!](#Installation)
+  2. [Using HIGHbrow!](#How%20To%20Use%20This%20Application)
+  3. [Testing HIGHbrow!](#Test%20Code)
+  4. [View HIGHbrow! Demo ](#Demo)
+  5. [Link to the Deployed HIGHbrow! App in Github ](#Link%20to%20the%20Deployed%20App%20in%20Github)
+  6. [Ask Us Questions](#Ask%20Questions)
+  7. [Licenses](#License)
+  ***
 
-### `npm test`
+  ## Installation
+  Navigate to the app through link and start using the application
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+  ## How to Use This Application
+  When you first access the application, you will get the homepage. On the homepage, click on "Tell Me More" to get a quick overview of the App. Click on "Create Registry", complete the form and submit. Once you have registered, you would click on the login link to login to the application. After logging in,  you can start creating your WishList! Click on FindBooks to search for a book by author, title and once you see a book you like, click Add to add to the WishList. Click on the My  Wishlist link, to see your wishlist.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  ## Test Code
+  No tests have been written for this app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+  ## Demo
+  Click here: https://drive.google.com/file/d/18PyJEHA1V9nov-993pq8Dkk1qeO-4HfD/view
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  ## Link to the Deployed App in Github
+  https://github.com/AlvinZC4/HIGHbrow 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ## Ask Questions
+  Visit my GitHub Page: [My GitHub Profile Page](https://github.com/AlvinZC4, Mapaige, purilisa)
+ -OR-
+ Drop me an e-mail at: test@email.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  ## License
+  This applicaton is covered under the Apache License 2.0
