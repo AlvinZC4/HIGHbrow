@@ -43,7 +43,9 @@ function App() {
     }
   }
 
-				
+	function logOut() {
+    setUser("")
+  }
 
   function checkUserCreds() {
     API.getUsername(loginForm)
@@ -66,7 +68,10 @@ function App() {
   return (
     <Router>
       <div>
-        <NavBar/>
+        <NavBar
+          user={user}
+          logout={logOut}
+        />
         <Wrapper>
           <Switch>
             <Route exact path="/">

@@ -58,6 +58,10 @@ h2 {
 	padding: 0 10px;
 }
 
+.logout:hover {
+	cursor: pointer;
+}
+
 /* styling for the create account */
 body,
 html {
