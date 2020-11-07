@@ -61,9 +61,9 @@ function FindBooks(props) {
             <Container>
                 <Row classes="d-flex justify-content-center mb-3">
                     <Col size="xs-12 sm-10 md-8 lg-6">
-                        <Header text="Find a Book to Add to Your Wishlist"/>
+                        <Header text="Create Your Wishlist"/>
                         < SearchForm
-                            label="Find a book to add to your wishlist!"
+                            label="Enter your favorite book title!"
                             placeHolder="Search for book here"
                             id="search"
                             handleInputChange={handleInputChange}
