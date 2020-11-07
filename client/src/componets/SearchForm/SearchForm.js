@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"
 
 function SearchForm(props) {
     return (
@@ -15,7 +16,7 @@ function SearchForm(props) {
                     id={props.id}
                 />
                 <div className="d-flex justify-content-center">
-                    <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">Search</button>
+                    <button onClick={props.handleFormSubmit} className="btn btn-infogi mt-3 search-btn">Search</button>
                 </div>
             </div>
         </form>

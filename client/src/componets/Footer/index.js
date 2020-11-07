@@ -8,7 +8,8 @@ function Footer() {
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-4 text-lg-left">
-							Created by Alvin Cox | Marcia Paige | Lisa Survana Copyright ©2020
+							Created by Alvin Cox | Marcia Paige | Lisa Survana
+							 Copyright ©2020
 							HIGHbrow
 						</div>
 						<div class="col-lg-4 my-3 my-lg-0">

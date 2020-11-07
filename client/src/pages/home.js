@@ -1,15 +1,24 @@
 import React from 'react';
+import {
+	FaCcMastercard,
+	FaTabletAlt,
+	FaClipboardList,
+	FaShareAlt,
+	FaUps
+} from 'react-icons/fa';
+
+import { RiHome5Fill, RiVirusLine } from 'react-icons/ri';
 
 function Home() {
 	return (
 		<>
-			<div className="container-fluid">
+			<div className="container intro">
 				<div className="row">
-					<div className="col-lg-3">
+					<div className="col-lg-4 ">
 						<h1> Welcome to HIGHbrow!</h1>
-						<h3 className="subtitle">A Gift Registry for Book Lovers</h3>
+						<h2 className="subtitle">A Gift Registry for Book Lovers</h2>
 						<a
-							className="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
+							className="btn tell btn-info  btn-xl text-uppercase js-scroll-trigger color= "
 							href="#about"
 						>
 							Tell Me More
@@ -17,100 +26,93 @@ function Home() {
 					</div>
 
 					<div className="col-lg-8 w-100%">
-						<img className="lady" src="/images/images/curledup.jpg" alt="lady curled up with book"/>
+						<img
+							className="lady"
+							src="/images/images/curledup.jpg"
+							alt="lady curled up with book"
+						/>
 					</div>
 
-				
-				
 					<div className="container">
 						<div className="text-center">
-							<h3 className="section-heading text-uppercase">
+							<h1 className="section-heading text-uppercase">
 								What is HIGHbrow?
-							</h3>
-							<h3 className="section-subheading text-muted">
+							</h1>
+							<h2 className="section-subheading text-muted">
 								Avid Readers Gift Ideas
-							</h3>
+							</h2>
 							<h3 className="section-subheading text-muted">Just Got Easy!</h3>
 						</div>
-						<div className="row text-center">
-							<div className="col-md-4">
-								<span className="fa-stack fa-2x">
-									<i className="fa fa-circle fa-stack-2x text-primary"></i>
-									<i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-								</span>
-								<h3 className="my-3">E-Commerce</h3>
-								<p className="text-muted">
-									Various sites to choose from to gift a loved one,
-									className=ate or friends with just a click of a button.
-								</p>
-							</div>
 
-							<div className="col-md-4">
-								<span className="fa-stack fa-2x">
-									<i className="fas fa-circle fa-stack-2x text-primary"></i>
-									<i className="fas fa-laptop fa-stack-1x fa-inverse"></i>
-								</span>
-								<h3 className="my-3">Electronic Delivery</h3>
-								<p className="text-muted">
-									Are your recipients tech savvy, minimalist or
-									environmentalist? No problem! Your reader can select their
-									book preference where electronic options are available.
-								</p>
-							</div>
-							<div className="col-md-4">
-								<span className="fa-stack fa-2x">
-									<i className="fa fa-circle fa-stack-2x text-primary"></i>
-									<i className=" fas fa-virus-slash fa-stack-1x fa-inverse"></i>
-								</span>
-								<h3 className="my-3">COVID free</h3>
-								<p className="text-muted">
-									No trips to the bookstore!This keeps your chances and your
-									loved ones chances of contracting the virus low.
-								</p>
+						<div className="container-fluid">
+							<div className="row text-center">
+								<div className="col-md-4">
+									<FaCcMastercard size="6rem" 
+									color="cornflowerblue"
+									/>
+
+									<h3 className="my-3">E-Commerce</h3>
+									<h5 className="text-muted">
+										Various sites to choose from to gift a loved one, classmate
+										or friend with just a click of a button.
+									</h5>
+								</div>
+
+								<div className="col-md-4">
+									<FaTabletAlt size="6rem" color="cornflowerblue" />
+
+									<h3 className="my-3">Electronic Delivery</h3>
+									<h5 className="text-muted">
+										Are your recipients tech savvy ? No problem! Your reader can
+										select their book preference where electronic options are
+										available.
+									</h5>
+								</div>
+								<div className="col-md-4">
+									<RiVirusLine size="6rem" color="cornflowerblue" />
+									<h3 className="my-3">COVID free</h3>
+									<h5 className="text-muted">
+										No trips to the bookstore! <br />
+										This keeps your chances and your loved ones chances of
+										contracting the virus low.
+									</h5>
+								</div>
 							</div>
 						</div>
 
-					
-							<div className="container" id="about">
-								<div className="text-center">
-									<h3 className="section-heading text-uppercase">How it Works</h3>
-									<h3 className="section-subheading text-muted">3 Easy Steps</h3>
-								</div>
-								<div className="row text-center">
-									<div className="col-ml 5I ">
-										<span className="fa-stack fa-2x">
-											<i className="fa fa-circle fa-stack-2x text-primary"></i>
-											<i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-										</span>
+						<hr/>
 
-									
+						<div className="container-fluid" id="about">
+							<div className="text-center">
+								<h1 className="section-heading text-uppercase">How it Works</h1>
+								<h2 className="section-subheading text-muted">3 Easy Steps</h2>
+							</div>
+							<div className="row text-center">
+								<div className="col-md-4">
+									<FaClipboardList size="6rem" color="cornflowerblue" />
+
 									<h3 className="my-3">Step 1 </h3>
-									<p className="text-muted">
+									<h5 className="text-muted">
 										Create a wishlist for friends to see and shop.
-									</p>
+									</h5>
 								</div>
 
 								<div className="col-md-4">
-									<span className="fa-stack fa-2x">
-										<i className="fas fa-circle fa-stack-2x text-primary"></i>
-										<i className="fas fa-laptop fa-stack-1x fa-inverse"></i>
-									</span>
+									<FaShareAlt size="6rem" color="cornflowerblue" />
 									<h3 className="my-3">Step 2</h3>
-									<p className="text-muted">
+									<h5  className="text-muted">
 										Share your link for your birthday, anniversary, college or
 										for a book club.Share your list anytime of the year!
-									</p>
+									</h5>
 								</div>
+
 								<div className="col-md-4">
-									<span className="fa-stack fa-2x">
-										<i className="fa fa-circle fa-stack-2x text-primary"></i>
-										<i className=" fas fa-virus-slash fa-stack-1x fa-inverse"></i>
-									</span>
+								<FaUps size="6rem" color="cornflowerblue" />
 									<h3 className="my-3">Step 3 </h3>
-									<p className="text-muted">
+									<h5 className="text-muted">
 										Just listen out for the doorbell or your email notification
 										that your gift has arrived.
-									</p>
+									</h5>
 								</div>
 							</div>
 
@@ -119,7 +121,7 @@ function Home() {
 									"This was the best invention to read, gift and share books."
 								</h3>
 								<img
-									className="t-image w-50%"
+									className="t-image "
 									src="/images/images/bookclub.jpg"
 									alt="lady-profile"
 								/>
@@ -148,8 +150,6 @@ function Home() {
 									alt="amazon-kindle-logo"
 								/>
 							</div>
-
-
 						</div>
 					</div>
 				</div>
