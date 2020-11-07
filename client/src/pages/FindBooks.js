@@ -63,7 +63,7 @@ function FindBooks(props) {
                     <Col size="xs-12 sm-10 md-8 lg-6">
                         <Header text="Create Your Wishlist"/>
                         < SearchForm
-                            label="Enter your favorite author or book!"
+                            label="Enter your favorite book title!"
                             placeHolder="Search for book here"
                             id="search"
                             handleInputChange={handleInputChange}
