@@ -13,10 +13,11 @@ function CreateUserForm(props) {
 
   console.log("props", props)
     return(
-      <div className="main-login main-center">
+      <div className="main-login main-center ">
         <form className="create-user ">
           <div className="form-group ">
-            <label htmlFor="new-username">Create New Username</label>
+            
+            <label htmlFor="new-username">Create Username</label>
             <input
                 type="text"
                 name="username"
