@@ -2,10 +2,12 @@ import React, {useState, useEffect} from "react"
 import {Container, Row, Col} from "../componets/Grid"
 import CreateUserForm from "../componets/CreateUserForm"
 import Header from "../componets/Header"
-import {Link} from "react-router-dom"
+import {useHistory} from "react-router-dom"
 import API from "../utils/API"
 
 function NewUser() {
+
+    const history = useHistory()
 
     const [newUserform, setNewUserForm] = useState({
         username: "",
@@ -24,6 +26,8 @@ function NewUser() {
         passwordConfirm: true,
     })
 
+    const [success, setSuccess] = useState(false)
+
     useEffect(() =>{
         setValidate({
             username: true,
@@ -31,7 +35,16 @@ function NewUser() {
             password: true,
             passwordConfirm: true,
         })
+
+        setSuccess(false)
     }, [])
+
+    useEffect(() => {
+        if (success == true) {
+            history.push("/login")
+        }
+    
+    })
 
     function handleInputChange(e) {
         const {name, value} = e.target
@@ -141,6 +154,7 @@ function NewUser() {
                             password: true,
                             passwordConfirm: true,
                         })
+                        setSuccess(true)
                     })
             
         }
