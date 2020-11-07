@@ -19,7 +19,7 @@ function CreateUserForm(props) {
                 aria-describedby="new-username"
             />
             {props.validate.username == true ? (
-              <small id="new-username" className="form-text text-white">Username must be between 5 and 15 characters long and only contain letters and numbers</small>
+              <small id="new-username" className="form-text text-white">Must be between 5 - 15 characters long / letters and numbers only</small>
             ) : (
               <small id="new-username" className="form-text validate">Username must be between 5 and 15 characters long and only contain letters and numbers</small>
             )}
@@ -36,7 +36,7 @@ function CreateUserForm(props) {
                 aria-describedby="new-first-name"
             />
             {props.validate.firstName == true ? (
-              <small id="new-first-name" className="form-text text-white">Enter your first name</small>
+              <small id="new-first-name" className="form-text text-white"></small>
             ) : (
               <small id="new-first-name" className="form-text validate">Must enter your first name</small>
             )}
@@ -53,7 +53,7 @@ function CreateUserForm(props) {
                 aria-describedby="new-last-name"
             />
             {props.validate.lastName == true ? (
-              <small id="new-last-name" className="form-text text-white">Enter your last name</small>
+              <small id="new-last-name" className="form-text text-white"></small>
             ) : (
               <small id="new-last-name" className="form-text validate">Must enter your last name</small>
             )}
@@ -66,11 +66,11 @@ function CreateUserForm(props) {
                 value={props.newUserForm.phone}
                 onChange={props.onChange}
                 className="form-control"
-                placeholder="Enter Your Phone Number Here"
+                placeholder="Enter Your Phone Number "
                 aria-describedby="new-phone"
             />
             {props.validate.phone == true ? (
-              <small id="new-phone" className="form-text text-white">Enter your phone number</small>
+              <small id="new-phone" className="form-text text-white"> </small>
             ) : (
               <small id="new-phone" className="form-text validate">Enter a valid phone number</small>
             )}
@@ -83,13 +83,13 @@ function CreateUserForm(props) {
                 value={props.newUserForm.email}
                 onChange={props.onChange}
                 className="form-control"
-                placeholder="Enter Your E-mail Address"
+                placeholder="Enter Your E-mail "
                 aria-describedby="new-email"
             />
                 {props.validate.email == true ? (
-                  <small id="new-email" className="form-text text-white">Enter your e-mail address</small>
+                  <small id="new-email" className="form-text text-white"></small>
                 ) : (
-                  <small id="new-email" className="form-text validate">Enter a valid e-mail address</small>
+                  <small id="new-email" className="form-text validate">Enter a valid e-mail </small>
                 )}
           </div>
           <div className="form-group ">
@@ -100,11 +100,11 @@ function CreateUserForm(props) {
                 value={props.newUserForm.password}
                 onChange={props.onChange}
                 className="form-control"
-                placeholder="Enter Your Password Here"
+                placeholder="Enter Your Password "
                 aria-describedby="new-password"
             />
               {props.validate.password == true ? (
-                <small id="new-password" className="form-text text-white">Password must be between 8 and 20 characters long</small>
+                <small id="new-password" className="form-text text-white">Must be between 8 - 20 characters long</small>
               ) : (
                 <small id="new-password" className="form-text validate">Password must be between 8 and 20 characters long</small>
               )}
@@ -122,7 +122,7 @@ function CreateUserForm(props) {
                 aria-describedby="confirm-password"
             />
               {props.validate.passwordConfirm == true ? (
-                <small id="confirm-password" className="form-text text-white">Re-type your password</small>
+                <small id="confirm-password" className="form-text text-white"></small>
               ) : (
                 <small id="confirm-password" className="form-text validate">Passwords must match</small>
               )}
