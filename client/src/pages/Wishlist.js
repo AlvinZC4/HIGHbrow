@@ -4,6 +4,7 @@ import UserWishlist from "../componets/UserWishlist"
 import WishlistItem from "../componets/WishlistItem"
 import BookImage from "../componets/BookImage"
 import Header from "../componets/Header"
+import UserMessage from "../componets/UserMessage"
 import { Container, Row, Col } from "../componets/Grid"
 import API from "../utils/API"
 
@@ -57,7 +58,7 @@ function Wishlist(props) {
                         </UserWishlist>
                     ) : (
                             <div className="d-flex justify-content-center mb-3">
-                                <h3>You have no books saved</h3>
+                                <UserMessage user={props.user}/>
                             </div>
                         )}
                 </Col>
