@@ -2,14 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 function LoginForm(props) {
-	const history = useHistory();
 
-	function redirect(event) {
-		event.preventDefault();
-		history.push('/wishlist');
-	}
-
-	console.log('props', props);
 	return (
 		<div className="main-login main-center">
 			<form className="login">

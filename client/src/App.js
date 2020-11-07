@@ -24,10 +24,6 @@ function App() {
 		console.log('user state', user);
 	}, [user]);
 
-  useEffect(() => {
-    console.log("user state", user)
-  }, [user])
-
   function handleInputChange(e) {
     const { name, value } = e.target
     setLoginForm({ ...loginForm, [name]: value })
@@ -43,13 +39,14 @@ function App() {
     }
   }
 
-				
+	function logOut() {
+    setUser("")
+  }
 
   function checkUserCreds() {
     API.getUsername(loginForm)
       .then(res => {
         console.log("Running checkUserCreds")
-        console.log(res)
 
         if (!res.data.username) {
           console.log("Username or Password does is incorrect")
@@ -66,7 +63,10 @@ function App() {
   return (
     <Router>
       <div>
-        <NavBar/>
+        <NavBar
+          user={user}
+          logout={logOut}
+        />
         <Wrapper>
           <Switch>
             <Route exact path="/">

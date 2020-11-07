@@ -18,10 +18,6 @@ function FindReader(props) {
         userBooks: []
     });
 
-    useEffect(() => {
-        console.log("searchResults", searchResults)
-    }, [searchResults])
-
     const findOtherReader = () => {
         if (props.user == "") {
             return
@@ -33,7 +29,6 @@ function FindReader(props) {
             console.log("findReader Search", search.search)
             API.findReader(query)
                 .then(res => {
-                    console.log("findReader search result", res.data)
                     setSearchResults(res.data)
                 })
         }

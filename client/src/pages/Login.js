@@ -6,10 +6,7 @@ import Header from "../componets/Header"
 
 function Login(props) {
 
-
     const history = useHistory()
-   
-
 
     useEffect(() => {
         if (props.user !== "") {
@@ -17,7 +14,6 @@ function Login(props) {
         }
     
     })
-
 
     return (
         <div>

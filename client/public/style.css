@@ -58,6 +58,10 @@ h2 {
 	padding: 0 10px;
 }
 
+.logout:hover {
+	cursor: pointer;
+}
+
 /* styling for the create account */
 body,
 html {
@@ -140,4 +144,9 @@ input::-webkit-input-placeholder {
 		
     width: 27.5em;  height: 3em;
 
+}
+
+.validate {
+	color: red;
+	background-color: lightpink;
 }

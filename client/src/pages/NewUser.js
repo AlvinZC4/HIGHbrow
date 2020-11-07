@@ -1,11 +1,13 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import {Container, Row, Col} from "../componets/Grid"
 import CreateUserForm from "../componets/CreateUserForm"
 import Header from "../componets/Header"
-import {Link} from "react-router-dom"
+import {useHistory} from "react-router-dom"
 import API from "../utils/API"
 
 function NewUser() {
+
+    const history = useHistory()
 
     const [newUserform, setNewUserForm] = useState({
         username: "",
@@ -17,6 +19,39 @@ function NewUser() {
         passwordConfirm: ""
     })
 
+    const [validate, setValidate] = useState({
+        username: true,
+        firstName: true,
+        lastName: true,
+        phone: true,
+        email: true,
+        password: true,
+        passwordConfirm: true,
+    })
+
+    const [success, setSuccess] = useState(false)
+
+    useEffect(() =>{
+        setValidate({
+            username: true,
+            firstName: true,
+            lastName: true,
+            phone: true,
+            email: true,
+            password: true,
+            passwordConfirm: true
+        })
+
+    setSuccess(false)
+    }, [])
+
+    useEffect(() => {
+        if (success == true) {
+            history.push("/login")
+        }
+    
+    })
+
     function handleInputChange(e) {
         const {name, value} = e.target
         setNewUserForm({...newUserform, [name]: value})
@@ -24,33 +59,213 @@ function NewUser() {
 
     function handleNewUserSubmit(e) {
         e.preventDefault()
-        if (newUserform.username && newUserform.firstName && newUserform.lastName && newUserform.phone && newUserform.email && newUserform.password && newUserform.passwordConfirm) {
-            if (newUserform.password !== newUserform.passwordConfirm) {
-                console.log("Password entries do not match")
-                console.log("password", newUserform.password)
-                console.log("confirm password", newUserform.passwordConfirm)
-                return
-            }
-            else {
-                console.log("input from newUserForm", newUserform)
-                const newUserPost = {
-                    username: newUserform.username,
-                    firstName: newUserform.firstName,
-                    lastName: newUserform.lastName,
-                    phone: newUserform.phone,
-                    email: newUserform.email,
-                    password: newUserform.passwordConfirm
-                }
-                console.log("New User info to Database", newUserPost)
-                API.createUser(newUserPost)
-                    .then(res => {
-                        console.log("create new user response", res)
-                    })
-            }
+        // Check That All Fields 
+            
+        // Validation on username, email, and password fields
+        if (newUserform.username.length < 5 || newUserform.username.length > 15 || /[0-9a-zA-Z_]*/.test(newUserform.username) == false) {
+            console.log("invalid username")
+            setValidate({
+                username: false,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true,
+            })
+            return
         }
         else {
-            console.log("")
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
         }
+
+        if (newUserform.firstName === "" || newUserform.firstName === "Enter Your First Name") {
+            console.log("enter your first name")
+            setValidate({
+                username: true,
+                firstName: false,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
+            return
+        }
+        else {
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
+        }
+
+        if (newUserform.lastName === "" || newUserform.lastName === "Enter Your Last Name") {
+            console.log("enter last name")
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: false,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
+            return
+        }
+        else {
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
+            
+        }
+
+        if (/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/.test(newUserform.phone) == false) {
+            console.log("Invalid phone number")
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: false,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
+            return
+        }
+        else {
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
+        }
+
+        if(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(newUserform.email) == false) {
+            console.log("Invalid email")
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: false,
+                password: true,
+                passwordConfirm: true
+            })
+            return
+        }
+        else {
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
+        }
+
+        if(newUserform.password < 8 || newUserform.password > 20) {
+            console.log("password too long or too short")
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: false,
+                passwordConfirm: true
+            })
+            return
+        }
+        else {
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
+        }
+        
+        if (newUserform.password !== newUserform.passwordConfirm) {
+            console.log("Password entries do not match")
+            console.log("password", newUserform.password)
+            console.log("confirm password", newUserform.passwordConfirm)
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: false
+            })
+            return
+        }
+        else {
+            setValidate({
+                username: true,
+                firstName: true,
+                lastName: true,
+                phone: true,
+                email: true,
+                password: true,
+                passwordConfirm: true
+            })
+        }
+            // Now Carry out the createUser query for the database
+            const newUserPost = {
+                username: newUserform.username,
+                firstName: newUserform.firstName,
+                lastName: newUserform.lastName,
+                phone: newUserform.phone,
+                email: newUserform.email,
+                password: newUserform.passwordConfirm
+            }
+            API.createUser(newUserPost)
+                .then(res => {
+                    console.log("Successfully created new user", res.data)
+                    setValidate({
+                        username: true,
+                        firstName: true,
+                        lastName: true,
+                        phone: true,
+                        email: true,
+                        password: true,
+                        passwordConfirm: true
+                    })
+                    setSuccess(true)
+                })
+                .catch(err => {
+                    console.log("Could not create new user", err)
+                })
+            
     }
 
     return (
@@ -62,6 +277,7 @@ function NewUser() {
                         newUserForm={newUserform}
                         onChange={handleInputChange}
                         onClick={handleNewUserSubmit}
+                        validate={validate}
                     />
                 </Col>
             </Row>
