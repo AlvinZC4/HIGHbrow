@@ -10,6 +10,10 @@ router.route("/mywishlist")
     
 router.route("/createuser")
     .post(usersController.createUser)
+
+router.route("/findreader")
+    .post(usersController.findReader)
+
 router.route("/:username")
     .put(usersController.addBook)
 
