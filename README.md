@@ -5,6 +5,8 @@
 
   HIGHbrow!
 
+![Orange and Yellow Wicked Cute Halloween Flyer](https://user-images.githubusercontent.com/63619744/98443558-f9733080-20d9-11eb-8bc1-ace9864b49b9.jpg)
+
   This is a book registry app, where you can create a wishlist of books that you would like to read and create a registry. You can share the link with your friends and family and they can gift you a book.
 
   ![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
