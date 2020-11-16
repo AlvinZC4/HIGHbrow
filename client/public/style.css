@@ -134,6 +134,7 @@ input::-webkit-input-placeholder {
 
 .wish {
 	text-align: center;
+	
 }
 
 .intro{
@@ -141,8 +142,8 @@ input::-webkit-input-placeholder {
 }
 
 .tell {
-		
-    width: 27.5em;  height: 3em;
+		text-align: center;
+    width: 26.5em;  height: 3em;
 
 }
 

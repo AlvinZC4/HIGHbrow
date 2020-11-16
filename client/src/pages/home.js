@@ -18,7 +18,7 @@ function Home() {
 						<h1> Welcome to HIGHbrow!</h1>
 						<h2 className="subtitle">A Gift Registry for Book Lovers</h2>
 						<a
-							className="btn tell bg-info  btn-xl text-uppercase js-scroll-trigger color= "
+							className="btn tell bg-info text-white btn-xl text-uppercase js-scroll-trigger "
 							href="#about"
 						>
 							Tell Me More
