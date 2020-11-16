@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 function LoginForm(props) {
 
 	return (
-		<div className="main-login main-center">
-			<form className="login">
+		<div className="main-login main-center container ">
+			<form className="login ">
 				<div className="form-group">
 					<label htmlFor="username">Username</label>
 					<input

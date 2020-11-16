@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom"
 function CreateUserForm(props) {
 
     return(
-      <div className="main-login main-center ">
+      <div className="main-login main-center  container">
         <form className="create-user ">
           <div className="form-group ">
             
