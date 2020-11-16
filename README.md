@@ -42,7 +42,7 @@
   ## Ask Questions
   Visit my GitHub Page: [My GitHub Profile Page](https://github.com/AlvinZC4, https://github.com/Mapaige, https://github.com/purilisa)
  -OR-
- Drop me an e-mail at: suvarnalisa@yahoo.com
+ Send an e-mail at: mapaige7@gmail.com
 
 
   ## License
