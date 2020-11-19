@@ -1,11 +1,13 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
+
 function LoginForm(props) {
 
 	return (
 		<div className="main-login main-center">
-			<form className="login">
+			<div className="container">
+				<form className="login ">
 				<div className="form-group">
 					<label htmlFor="username">Username</label>
 					<input
@@ -34,6 +36,7 @@ function LoginForm(props) {
 					</button>
 				</div>
 			</form>
+			</div>
 		</div>
 	);
 }
